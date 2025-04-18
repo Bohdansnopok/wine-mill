@@ -106,3 +106,23 @@
         }
     }
 }
+
+.header__navs {
+    display: flex;
+    align-items: center;
+    background-color: #1B1918;
+    gap: 40px;
+    font-size: 12px;
+    padding: 6px 45px 11px 45px;
+    border-bottom: 1px solid #101010;
+
+    a {
+        color: white;
+        text-decoration: none;
+        transition: color .3s;
+    }
+    
+    a:hover {
+        color: #666666;
+    }
+}
