@@ -1,0 +1,108 @@
+.header {
+    padding: 7px 0;
+    color: white;
+}
+
+.topTextLine {
+    text-align: center;
+    font-size: 7px;
+    color: white;
+    letter-spacing: 4.5px;
+    padding-bottom: 9px;
+
+    a {
+        color: white;
+    }
+}
+
+.headerContent {
+    padding: 15px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0a0a0a;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 600;
+
+        p {
+            margin-bottom: 6px;
+        }
+    }
+
+    .headerInput {
+        width: 557px;
+        padding: 12px;
+        border: none;
+    }
+
+    .headerInput:focus {
+        outline: none;
+    }
+
+    .headerInput__submit {
+        background: #7a0000;
+        height: 40px;
+        padding: 0 13px;
+    }
+
+    .headerContent__items {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .headerContent__items__item__links {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    font-size: 9px;
+                    color: #666666;
+                    transition: color 0.3s;
+                }
+
+                a:hover {
+                    font-size: 9px;
+                    color: #555555;
+                }
+            }
+
+            .headerContent__items__item__top {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+
+                .geo {
+                    font-size: 9px;
+                    color: #666666;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: #fafafa;
+                font-size: 12px;
+                transition: color 0.3s;
+            }
+
+            a:hover {
+                color: #666666;
+            }
+
+            .cartPrice {
+                font-size: 9px;
+            }
+        }
+    }
+}
