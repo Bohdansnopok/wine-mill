@@ -9,6 +9,8 @@ body {
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .redBtn {
@@ -26,6 +28,8 @@ body {
 h1 {
     font-family: "Alex Brush", cursive;
     font-size: 48px;
+    font-weight: 500;
+    color: white;
 }
 
 h2 {
