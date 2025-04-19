@@ -39,7 +39,7 @@ export default function Header() {
                         <div className="headerContent__items__item">
                             <div className="headerContent__items__item__top">
                                 <Image src={geo} alt="geoIcon" />
-                                <div className="geo">Москва</div>
+                                <div className="geo">Киев</div>
                             </div>
                             <a href="#">063 658 32 21</a>
                         </div>
