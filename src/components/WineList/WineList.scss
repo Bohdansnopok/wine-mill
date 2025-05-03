@@ -172,4 +172,142 @@
             }
         }
     }
+
+    &__list {
+        width: 100%;
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            gap: 82px;
+        }
+
+        &__card {
+            width: 238px;
+            position: relative;
+
+            &__wine {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                z-index: 5;
+
+                &__blackDecor {
+                    background-color: #0a0a0a;
+                    position: absolute;
+                    top: 12%;
+                    z-index: 1px;
+                    height: 275px;
+                    width: 100%;
+                }
+            }
+
+            &__wineImage {
+                display: flex;
+                align-self: center;
+                margin: 0 auto;
+                z-index: 5;
+                transition: all 0.1s ease-in-out;
+            }
+
+            &__wineImage:hover {
+                width: 110px;
+            }
+
+            &__title {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                letter-spacing: 2.5px;
+            }
+
+            &__year {
+                font-size: 7px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                margin-bottom: 5px;
+            }
+
+            &__country {
+                font-size: 7px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                margin-bottom: 5px;
+            }
+
+            &__priceAndCart {
+                font-size: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            &__price {
+                font-weight: 700;
+                letter-spacing: 3px;
+
+                p {
+                    color: gray;
+                    margin-bottom: 2px;
+                }
+
+                div {
+                    font-size: 11px;
+                }
+            }
+
+            .redBtn {
+                padding: 8px 13px;
+            }
+        }
+
+        .dropdowns {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 60px;
+
+            .wrapper {
+                display: flex;
+                gap: 40px;
+            }
+        }
+
+        .dropdown select {
+            background-color: #1b1918;
+            color: #fff;
+            border: none;
+            padding: 5px 10px 5px 7px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dropdown select:focus {
+            outline: none;
+        }
+
+        .dropdown option:focus {
+            outline: none;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown::after {
+            content: "▼";
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #fff;
+            font-size: 12px;
+        }
+    }
 }
