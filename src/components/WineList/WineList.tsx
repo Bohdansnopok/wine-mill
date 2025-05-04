@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import './WineList.scss'
-import WineCatalogFilter from '../WineCatalogFilter/WineCatalogFilter';
 import wine from '../../../public/Wine.png'
 
 export default function WineList() {

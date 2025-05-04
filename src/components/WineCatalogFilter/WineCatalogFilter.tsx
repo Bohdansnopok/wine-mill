@@ -20,6 +20,7 @@ export default function wineCatalogFilter() {
 
     return (
         <div className="wineCatalog__filter">
+                        <h1>Wine</h1>
             <div className="wineCatalog__filter__checkout">
                 <div className="wineCatalog__filter__checkout_top">
                     <p>Цвет</p>
