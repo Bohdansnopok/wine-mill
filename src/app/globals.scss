@@ -31,7 +31,6 @@ body {
     max-width: 1300px;
     margin: 0 auto;
     background: #1b1918;
-
 }
 
 h1 {
@@ -53,4 +52,32 @@ button {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+.catalogWrapper {
+    .container {
+        .flexWrapper {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 94px;
+            padding: 75px 45px 0 45px;
+            color: white;
+        }
+    }
+}
+
+.catalogLinkOrButton {
+    display: block;
+    font-size: 11px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    margin-top: 75px;
+    letter-spacing: 5px;
+    transition: color 0.1s ease-in-out;
+}
+
+.catalogLinkOrButton:hover {
+    color: bisque;
 }
