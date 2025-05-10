@@ -1,0 +1,208 @@
+.itemDetails {
+    position: relative;
+    color: white;
+
+    .container {
+        padding: 28px 45px;
+    }
+
+    &__flexWrapper {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 120px;
+    }
+
+    &__image {
+        width: 450px;
+        position: relative;
+
+        &__wine {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+
+            &__blackDecor {
+                background-color: #0a0a0a;
+                position: absolute;
+                top: 20%;
+                z-index: 1px;
+                height: 275px;
+                max-width: 450px;
+                width: 100%;
+            }
+        }
+
+        &__wineImage {
+            display: flex;
+            align-self: center;
+            margin: 0 auto;
+            z-index: 5;
+            transition: all 0.1s ease-in-out;
+        }
+
+        &__wineImage:hover {
+            width: 110px;
+        }
+    }
+
+    &__content {
+        width: 80%;
+        padding-top: 65px;
+
+        &__overview {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__title {
+                font-size: 28px;
+                letter-spacing: 5px;
+                border-bottom: 1px solid gray;
+                padding-bottom: 20px;
+                max-width: 320px;
+                width: 100%;
+            }
+
+            &__price {
+                font-size: 28px;
+                letter-spacing: 3px;
+                font-weight: 700;
+
+                &__subtitle {
+                    font-size: 9px;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                    letter-spacing: 5.5px;
+                    color: gray;
+                }
+            }
+        }
+
+        &__buySection {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__info {
+                font-size: 9px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            &__addToCart {
+                height: 50px;
+                display: flex;
+                align-items: center;
+
+                &__input {
+                    height: 100%;
+                    width: 60px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: 700;
+                    display: block;
+                }
+
+                input[type="number"]::-webkit-outer-spin-button,
+                input[type="number"]::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                /* Для Firefox */
+                input[type="number"] {
+                    -moz-appearance: textfield;
+                }
+
+                .redBtn {
+                    height: 100%;
+                    padding: 0 36px;
+                    font-size: 14px;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        &__infoCols {
+            margin-top: 85px;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 50px;
+
+            &__col {
+                display: flex;
+                flex-direction: column;
+                gap: 35px;
+
+                &__title {
+                    font-size: 9px;
+                    font-weight: 600;
+                    color: gray;
+                    margin-bottom: 10px;
+                    letter-spacing: 2.5px;
+                }
+
+                div {
+                    font-size: 11px;
+                    font-weight: 800;
+                    letter-spacing: 2.5px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        &__description {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            &__part {
+                padding-bottom: 30px;
+                position: relative;
+
+                &__title {
+                    font-size: 9px;
+                    font-weight: 600;
+                    color: gray;
+                    margin-bottom: 15px;
+                    letter-spacing: 2.5px;
+                }
+
+                &__content {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
+
+            &__part::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 320px;
+                border-bottom: 1px solid gray;
+            }
+
+            &__part:last-child::after {
+                border: none;
+            }
+        }
+    }
+
+    .youMayAlsoLike {
+        padding-top: 50px;
+
+        &__title {
+            margin-bottom: 75px;
+        }
+    }
+}
