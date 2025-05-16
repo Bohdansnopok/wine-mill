@@ -5,6 +5,7 @@ import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import WineList from "@/components/WineList/WineList";
 import Link from "next/link";
+import { LoginModal } from "@/components/LoginModal/LoginModal";
 
 export default function Home() {
 
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <BannerSlider />
       <Offers />
+      <LoginModal />
       <section className="catalogWrapper">
         <div className="container">
           <div className="flexWrapper">

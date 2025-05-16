@@ -1,0 +1,58 @@
+.loginModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); // затемнение фона
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    &__content {
+        background: #0A0A0A;
+        padding: 90px 65px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        width: 732px;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-size: 11px;
+        text-transform: uppercase;
+
+        p {
+            margin-top: 35px;
+        }
+
+        &__form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            padding-top: 50px;
+
+            label {
+                color: gray;
+            }
+
+            input {
+                display: block;
+                border: none;
+                font-size: 12px;
+                padding: 10px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .redBtn {
+                padding: 10px 50px;
+                max-width: 188px;
+                font-weight: 400;
+            }
+        }
+    }
+}
