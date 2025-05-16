@@ -1,14 +1,19 @@
 import Image from 'next/image'
-import './LoginModal.scss'
+import '../LoginModal/LoginModal.scss'
 import logo from '../../../public/logo.svg'
 
-export function LoginModal() {
+export function RegisterModal() {
     return (
         <section className="loginModal">
             <div className="loginModal__content">
                 <Image src={logo} alt='' />
-                <p>ВОЙТИ В АККАУНТ</p>
+                <p>ЗАРЕГИСТРИРОВАТСЯ</p>
                 <form action="" className="loginModal__content__form">
+                    <label htmlFor="">
+                        имя
+                        <input type="text" />
+                    </label>
+                    
                     <label htmlFor="">
                         електронная почта
                         <input type="email" />
@@ -16,6 +21,11 @@ export function LoginModal() {
                     
                     <label htmlFor="">
                         пароль
+                        <input type="password" />
+                    </label>
+                    
+                    <label htmlFor="">
+                        подтвердите пароль
                         <input type="password" />
                     </label>
 
