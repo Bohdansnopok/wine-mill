@@ -11,17 +11,59 @@ import YouMayAlsoLike from '@/components/YouMayAlsoLike/YouMayAlsoLike';
 import Subscribe from '@/components/Subscribe/Subscribe';
 import SommelierChoise from '@/components/SommelierChoise/SommelierChoise';
 
+// Пример массива товаров (можно заменить на реальные данные)
+const initialProducts = [
+    {
+        id: 1,
+        name: "LE MEAL",
+        year: "2010/0.75 л",
+        country: "франция/M.CHAPOUTIER",
+        price: 9000,
+        quantity: 1,
+        image: wine,
+    },
+    {
+        id: 2,
+        name: "LE MEAL",
+        year: "2010/0.75 л",
+        country: "франция/M.CHAPOUTIER",
+        price: 12000,
+        quantity: 1,
+        image: wine,
+    },
+    {
+        id: 3,
+        name: "LE MEAL",
+        year: "2010/0.75 л",
+        country: "франция/M.CHAPOUTIER",
+        price: 3000,
+        quantity: 1,
+        image: wine,
+    },
+];
+
 export default function Cart() {
-    const [quantity, setQuantity] = useState(1);
+    const [products, setProducts] = useState(initialProducts);
 
-    const handleDecrement = () => {
-        setQuantity(prev => Math.max(1, prev - 1));
+    const handleDecrement = (id: number) => {
+        setProducts(products =>
+            products.map(product =>
+                product.id === id
+                    ? { ...product, quantity: Math.max(1, product.quantity - 1) }
+                    : product
+            )
+        );
     };
 
-    const handleIncrement = () => {
-        setQuantity(prev => Math.min(20, prev + 1));
+    const handleIncrement = (id: number) => {
+        setProducts(products =>
+            products.map(product =>
+                product.id === id
+                    ? { ...product, quantity: Math.min(20, product.quantity + 1) }
+                    : product
+            )
+        );
     };
-
 
     return (
         <section className="cart">
@@ -54,113 +96,40 @@ export default function Cart() {
                             <div className="cart__content__list__top__item all">ВСЕГО</div>
                         </div>
 
-                        <div className="cart__content__list__content">
-                            <div className="cart__content__list__content__item product">
-                                <div className='cart__content__list__content__item__image'>
-                                    <div className='closeIcon'><IoMdCloseCircleOutline /></div>
-
-                                    <Image src={wine} alt='wine' />
-                                </div>
-
-                                <div className="cart__content__list__content__item__wineInfo">
-                                    <div>
-                                        LE MEAL <br />
-                                        HERMITAGE <br />
+                        {products.map(product => (
+                            <div className="cart__content__list__content" key={product.id}>
+                                <div className="cart__content__list__content__item product">
+                                    <div className='cart__content__list__content__item__image'>
+                                        <div className='closeIcon'><IoMdCloseCircleOutline /></div>
+                                        <Image src={product.image} alt='wine' />
                                     </div>
-
-                                    <p className="data">2010/0.75 л</p>
-                                    <p className="country">франция/M.CHAPOUTIER</p>
-                                </div>
-                            </div>
-                            <div className="cart__content__list__content__item price">
-                                9 000
-                            </div>
-
-                            <div className="cart__content__list__content__item quantity">
-                                <div onClick={handleDecrement} style={{ cursor: 'pointer' }}>-</div>
-                                <p>{quantity}</p>
-                                <div onClick={handleIncrement} style={{ cursor: 'pointer' }}>+</div>
-                            </div>
-
-
-                            <div className="cart__content__list__content__item all">
-                                9 000
-                            </div>
-                        </div>
-
-                        <div className="cart__content__list__content">
-                            <div className="cart__content__list__content__item product">
-                                <div className='cart__content__list__content__item__image'>
-                                    <div className='closeIcon'><IoMdCloseCircleOutline /></div>
-
-                                    <Image src={wine} alt='wine' />
-                                </div>
-
-                                <div className="cart__content__list__content__item__wineInfo">
-                                    <div>
-                                        LE MEAL <br />
-                                        HERMITAGE <br />
+                                    <div className="cart__content__list__content__item__wineInfo">
+                                        <div>
+                                            {product.name} <br />
+                                            HERMITAGE <br />
+                                        </div>
+                                        <p className="data">{product.year}</p>
+                                        <p className="country">{product.country}</p>
                                     </div>
-
-                                    <p className="data">2010/0.75 л</p>
-                                    <p className="country">франция/M.CHAPOUTIER</p>
+                                </div>
+                                <div className="cart__content__list__content__item price">
+                                    {product.price.toLocaleString()}
+                                </div>
+                                <div className="cart__content__list__content__item quantity">
+                                    <div onClick={() => handleDecrement(product.id)} style={{ cursor: 'pointer' }}>-</div>
+                                    <p>{product.quantity}</p>
+                                    <div onClick={() => handleIncrement(product.id)} style={{ cursor: 'pointer' }}>+</div>
+                                </div>
+                                <div className="cart__content__list__content__item all">
+                                    {(product.price * product.quantity).toLocaleString()}
                                 </div>
                             </div>
-                            <div className="cart__content__list__content__item price">
-                                9 000
-                            </div>
-
-                            <div className="cart__content__list__content__item quantity">
-                                <div onClick={handleDecrement} style={{ cursor: 'pointer' }}>-</div>
-                                <p>{quantity}</p>
-                                <div onClick={handleIncrement} style={{ cursor: 'pointer' }}>+</div>
-                            </div>
-
-
-                            <div className="cart__content__list__content__item all">
-                                9 000
-                            </div>
-                        </div>
-
-                        <div className="cart__content__list__content">
-                            <div className="cart__content__list__content__item product">
-                                <div className='cart__content__list__content__item__image'>
-                                    <div className='closeIcon'><IoMdCloseCircleOutline /></div>
-
-                                    <Image src={wine} alt='wine' />
-                                </div>
-
-                                <div className="cart__content__list__content__item__wineInfo">
-                                    <div>
-                                        LE MEAL <br />
-                                        HERMITAGE <br />
-                                    </div>
-
-                                    <p className="data">2010/0.75 л</p>
-                                    <p className="country">франция/M.CHAPOUTIER</p>
-                                </div>
-                            </div>
-                            <div className="cart__content__list__content__item price">
-                                9 000
-                            </div>
-
-                            <div className="cart__content__list__content__item quantity">
-                                <div onClick={handleDecrement} style={{ cursor: 'pointer' }}>-</div>
-                                <p>{quantity}</p>
-                                <div onClick={handleIncrement} style={{ cursor: 'pointer' }}>+</div>
-                            </div>
-
-
-                            <div className="cart__content__list__content__item all">
-                                9 000
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
                 <YouMayAlsoLike />
             </div>
-
             <Subscribe />
         </section>
     )
