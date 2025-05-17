@@ -200,6 +200,13 @@
 
     .youMayAlsoLike {
         padding-top: 50px;
+        color: white;
+
+        .wineCatalog__list__cards {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
 
         &__title {
             margin-bottom: 75px;

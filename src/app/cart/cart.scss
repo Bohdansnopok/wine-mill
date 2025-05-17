@@ -1,0 +1,145 @@
+.cart {
+    .container {
+        padding: 85px 45px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+
+        &__pages {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: gray;
+            font-size: 9px;
+            font-size: 12px;
+
+            &__page.active {
+                color: white;
+            }
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: darkslateblue;
+        }
+    }
+
+    &__content {
+        &__list {
+            border: 2px solid #0a0a0a;
+            color: white;
+            padding-bottom: 35px;
+
+            &__top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 70px;
+                border-bottom: 2px solid #0a0a0a;
+                padding: 15px 27px;
+                font-weight: bold;
+                font-size: 11px;
+            }
+
+            .product {
+                width: 310px;
+            }
+
+            .price {
+                width: 70px;
+            }
+
+            .quantity {
+                width: 135px;
+                display: flex;
+                align-items: center;
+                gap: 50px;
+                font-size: 11px;
+                font-weight: bold;
+                user-select: none;
+            }
+
+            .all {
+                width: 75px;
+            }
+
+            &__content {
+                padding: 25px 27px 0 0;
+                display: flex;
+                align-items: start;
+                justify-content: space-between;
+                border-bottom: 2px solid #0a0a0a;
+                margin-left: 27px;
+
+                &__item {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &__image {
+                        background-color: #0a0a0a;
+                        width: 100px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 5px;
+                    }
+
+                    .closeIcon {
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                    }
+
+                    &__wineInfo {
+                        font-weight: 600;
+                        letter-spacing: 3px;
+
+                        .data {
+                            margin-top: 18px;
+                            margin-bottom: 5px;
+                        }
+
+                        .data, .country {
+                            font-size: 9px;
+                        }
+                    }
+                }
+
+                &__item.product {
+                    align-items: start;
+                    gap: 20px;
+                }
+            }
+
+             &__content:last-child {
+                border-bottom: none;
+             }
+        }
+    }
+
+    .youMayAlsoLike {
+        padding-top: 50px;
+        color: white;
+
+        .wineCatalog__list__cards {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__title {
+            margin-bottom: 75px;
+        }
+    }
+}
