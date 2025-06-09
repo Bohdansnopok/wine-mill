@@ -1,9 +1,22 @@
+"use client";
+
 import Image from 'next/image';
+import React from "react";
+
 import './WineList.scss'
 import wine from '../../../public/Wine.png'
+import { useWines, Wine } from '@/hooks/useWines';
 
-export default function WineList() {
+type WineListProps = {
+  limit?: number;
+};
 
+export default function WineList({ limit }: WineListProps) {
+    const { wines, loading } = useWines();
+
+    if (loading) return <p>Завантаження...</p>;
+
+    const displayedWines = limit ? wines.slice(0, limit) : wines;
 
     return (
         <aside className="wineCatalog">
@@ -40,161 +53,32 @@ export default function WineList() {
                 </div>
 
                 <div className="wineCatalog__list__cards">
-                    <div className="wineCatalog__list__card">
-                        <div className="wineCatalog__list__card__wine__blackDecor"></div>
-                        <div className="wineCatalog__list__card__wine"><Image src={wine} alt='' className='wineCatalog__list__card__wineImage' /></div>
-                        <p className='wineCatalog__list__card__title'>
-                            L’ERMITE <br />
-                            HERMITAGE <br />
-                        </p>
+                    {displayedWines.map((wine: Wine) => (
+                        <div key={wine.id} className="wineCatalog__list__card">
+                            <div className="wineCatalog__list__card__wine__blackDecor"></div>
+                            <div className="wineCatalog__list__card__wine"><Image src={wine.image} alt={wine.name} height={349} width={99} className='wineCatalog__list__card__wineImage' /></div>
+                            <p className='wineCatalog__list__card__title'>
+                                {wine.name}
+                            </p>
 
-                        <div className="wineCatalog__list__card__year">
-                            2009/0.75 л
-                        </div>
-
-                        <div className="wineCatalog__list__card__country">
-                            франция/M.CHAPOUTIER
-                        </div>
-
-                        <div className="wineCatalog__list__card__priceAndCart">
-                            <div className="wineCatalog__list__card__price">
-                                <p>ЦЕНА ЗА 1 ШТ</p>
-                                <div>90 000 р</div>
+                            <div className="wineCatalog__list__card__year">
+                                {wine.createdAt}/{wine.liters} л
                             </div>
 
-                            <button className='redBtn'>В КОРЗИНУ</button>
-                        </div>
-                    </div>
-
-                    <div className="wineCatalog__list__card">
-                        <div className="wineCatalog__list__card__wine__blackDecor"></div>
-                        <div className="wineCatalog__list__card__wine"><Image src={wine} alt='' className='wineCatalog__list__card__wineImage' /></div>
-                        <p className='wineCatalog__list__card__title'>
-                            L’ERMITE <br />
-                            HERMITAGE <br />
-                        </p>
-
-                        <div className="wineCatalog__list__card__year">
-                            2009/0.75 л
-                        </div>
-
-                        <div className="wineCatalog__list__card__country">
-                            франция/M.CHAPOUTIER
-                        </div>
-
-                        <div className="wineCatalog__list__card__priceAndCart">
-                            <div className="wineCatalog__list__card__price">
-                                <p>ЦЕНА ЗА 1 ШТ</p>
-                                <div>90 000 р</div>
+                            <div className="wineCatalog__list__card__country">
+                                {wine.country}/M.{wine.city}
                             </div>
 
-                            <button className='redBtn'>В КОРЗИНУ</button>
-                        </div>
-                    </div>
+                            <div className="wineCatalog__list__card__priceAndCart">
+                                <div className="wineCatalog__list__card__price">
+                                    <p>ЦЕНА ЗА 1 ШТ</p>
+                                    <div>{wine.price}</div>
+                                </div>
 
-                    <div className="wineCatalog__list__card">
-                        <div className="wineCatalog__list__card__wine__blackDecor"></div>
-                        <div className="wineCatalog__list__card__wine"><Image src={wine} alt='' className='wineCatalog__list__card__wineImage' /></div>
-                        <p className='wineCatalog__list__card__title'>
-                            L’ERMITE <br />
-                            HERMITAGE <br />
-                        </p>
-
-                        <div className="wineCatalog__list__card__year">
-                            2009/0.75 л
-                        </div>
-
-                        <div className="wineCatalog__list__card__country">
-                            франция/M.CHAPOUTIER
-                        </div>
-
-                        <div className="wineCatalog__list__card__priceAndCart">
-                            <div className="wineCatalog__list__card__price">
-                                <p>ЦЕНА ЗА 1 ШТ</p>
-                                <div>90 000 р</div>
+                                <button className='redBtn'>В КОРЗИНУ</button>
                             </div>
-
-                            <button className='redBtn'>В КОРЗИНУ</button>
                         </div>
-                    </div>
-
-                    <div className="wineCatalog__list__card">
-                        <div className="wineCatalog__list__card__wine__blackDecor"></div>
-                        <div className="wineCatalog__list__card__wine"><Image src={wine} alt='' className='wineCatalog__list__card__wineImage' /></div>
-                        <p className='wineCatalog__list__card__title'>
-                            L’ERMITE <br />
-                            HERMITAGE <br />
-                        </p>
-
-                        <div className="wineCatalog__list__card__year">
-                            2009/0.75 л
-                        </div>
-
-                        <div className="wineCatalog__list__card__country">
-                            франция/M.CHAPOUTIER
-                        </div>
-
-                        <div className="wineCatalog__list__card__priceAndCart">
-                            <div className="wineCatalog__list__card__price">
-                                <p>ЦЕНА ЗА 1 ШТ</p>
-                                <div>90 000 р</div>
-                            </div>
-
-                            <button className='redBtn'>В КОРЗИНУ</button>
-                        </div>
-                    </div>
-
-                    <div className="wineCatalog__list__card">
-                        <div className="wineCatalog__list__card__wine__blackDecor"></div>
-                        <div className="wineCatalog__list__card__wine"><Image src={wine} alt='' className='wineCatalog__list__card__wineImage' /></div>
-                        <p className='wineCatalog__list__card__title'>
-                            L’ERMITE <br />
-                            HERMITAGE <br />
-                        </p>
-
-                        <div className="wineCatalog__list__card__year">
-                            2009/0.75 л
-                        </div>
-
-                        <div className="wineCatalog__list__card__country">
-                            франция/M.CHAPOUTIER
-                        </div>
-
-                        <div className="wineCatalog__list__card__priceAndCart">
-                            <div className="wineCatalog__list__card__price">
-                                <p>ЦЕНА ЗА 1 ШТ</p>
-                                <div>90 000 р</div>
-                            </div>
-
-                            <button className='redBtn'>В КОРЗИНУ</button>
-                        </div>
-                    </div>
-
-                    <div className="wineCatalog__list__card">
-                        <div className="wineCatalog__list__card__wine__blackDecor"></div>
-                        <div className="wineCatalog__list__card__wine"><Image src={wine} alt='' className='wineCatalog__list__card__wineImage' /></div>
-                        <p className='wineCatalog__list__card__title'>
-                            L’ERMITE <br />
-                            HERMITAGE <br />
-                        </p>
-
-                        <div className="wineCatalog__list__card__year">
-                            2009/0.75 л
-                        </div>
-
-                        <div className="wineCatalog__list__card__country">
-                            франция/M.CHAPOUTIER
-                        </div>
-
-                        <div className="wineCatalog__list__card__priceAndCart">
-                            <div className="wineCatalog__list__card__price">
-                                <p>ЦЕНА ЗА 1 ШТ</p>
-                                <div>90 000 р</div>
-                            </div>
-
-                            <button className='redBtn'>В КОРЗИНУ</button>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </aside>

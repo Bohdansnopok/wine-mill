@@ -1,8 +1,11 @@
+// components/Header/Header.jsx
 import Image from "next/image";
 import "./Header.scss"
 import logo from "../../../public/logo.svg"
 import search from "../../../public/search.svg"
 import geo from "../../../public/geo.svg"
+import { useRouter } from 'next/router';
+import Link from "next/link";
 
 export default function Header() {
     return (
@@ -56,17 +59,17 @@ export default function Header() {
                 </div>
 
                 <div className="header__navs">
-                    <a href="#">Вино</a>
-                    <a href="#">Игристое</a>
-                    <a href="#">Виски</a>
-                    <a href="#">Коньяк</a>
-                    <a href="#">Арманьяк</a>
-                    <a href="#">Ром</a>
-                    <a href="#">Водка</a>
-                    <a href="#">Ликер</a>
-                    <a href="#">Коктейли</a>
-                    <a href="#">Деликатесы</a>
-                </div>
+                <Link href="/drinks/вино">Вино</Link>
+                <Link href="/drinks/игристое">Игристое</Link>
+                <Link href="/drinks/виски">Виски</Link>
+                <Link href="/drinks/коньяк">Коньяк</Link>
+                <Link href="/drinks/арманьяк">Арманьяк</Link>
+                <Link href="/drinks/ром">Ром</Link>
+                <Link href="/drinks/водка">Водка</Link>
+                <Link href="/drinks/ликер">Ликер</Link>
+                <Link href="/drinks/коктейли">Коктейли</Link>
+                <Link href="/drinks/деликатесы">Деликатесы</Link>
+            </div>
             </div>
         </header>
     );

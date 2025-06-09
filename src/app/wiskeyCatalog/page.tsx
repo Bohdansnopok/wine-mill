@@ -1,4 +1,4 @@
-import WiskeyCatalog from "@/components/WiskeyCatalog/WiskeyCatalog";
+import WiskeyCatalog from "@/components/WiskeyCatalog/DrinkCatalog";
 import WiskeyCatalogFilter from "@/components/WiskeyCatalogFilter/WiskeyCatalogFilter";
 
 export default function WiskeyCatalogPage() {

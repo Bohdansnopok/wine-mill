@@ -19,7 +19,7 @@ export default function Home() {
           <div className="flexWrapper">
             <WineCatalogFilter />
             <div>
-              <WineList />
+              <WineList limit={9} />
               <Link href="/catalog" className="catalogLinkOrButton">СМОТРЕТЬ ВСЕ</Link>
             </div>
           </div>
