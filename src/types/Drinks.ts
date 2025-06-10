@@ -1,5 +1,4 @@
-// types/Alcohol.ts
-export interface Alcohol {
+export interface Drink {
   id: string;
   category: string;
   name: string;
@@ -10,4 +9,17 @@ export interface Alcohol {
   price: number;
   description: string;
   image: string;
+}
+
+// удобная константа для категорий (удобнее длдя меня)
+export const DRINK_CATEGORIES = {
+  WINE: "вино",
+  WHISKEY: "виски",
+  COGNAC: "коньяк",
+  VODKA: "водка",
+  ARMAGNAC: "арманьяк",
+  RUM: "ром",
+  LIQUOR: "ликер",
+  COCKTAILS: "коктейли",
+  DELICACIES: "деликатесы",
 }

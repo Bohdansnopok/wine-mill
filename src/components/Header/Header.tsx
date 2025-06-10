@@ -59,16 +59,16 @@ export default function Header() {
                 </div>
 
                 <div className="header__navs">
-                <Link href="/drinks/вино">Вино</Link>
-                <Link href="/drinks/игристое">Игристое</Link>
-                <Link href="/drinks/виски">Виски</Link>
-                <Link href="/drinks/коньяк">Коньяк</Link>
-                <Link href="/drinks/арманьяк">Арманьяк</Link>
-                <Link href="/drinks/ром">Ром</Link>
-                <Link href="/drinks/водка">Водка</Link>
-                <Link href="/drinks/ликер">Ликер</Link>
-                <Link href="/drinks/коктейли">Коктейли</Link>
-                <Link href="/drinks/деликатесы">Деликатесы</Link>
+                <Link href="/catalog">Вино</Link>
+                <Link href="">Игристое</Link>
+                <Link href="/wiskeyCatalog">Виски</Link>
+                <Link href="">Коньяк</Link>
+                <Link href="">Арманьяк</Link>
+                <Link href="">Ром</Link>
+                <Link href="">Водка</Link>
+                <Link href="">Ликер</Link>
+                <Link href="">Коктейли</Link>
+                <Link href="">Деликатесы</Link>
             </div>
             </div>
         </header>

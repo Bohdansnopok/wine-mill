@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cognac-1",
+    "category": "cognac",
+    "name": "Chateau de Cognac Reserve",
+    "year": 2015,
+    "litres": 0.7,
+    "country": "France",
+    "city": "Cognac",
+    "price": 120000,
+    "description": "Коньяк – благородний французький напій, виготовлений з дистиляції білого вина та витриманий у дубових бочках.",
+    "image": "/cognac1.jpeg"
+  },
+  {
+    "id": "cognac-2",
+    "category": "cognac",
+    "name": "Grande Fine Cognac",
+    "year": 2012,
+    "litres": 0.75,
+    "country": "France",
+    "city": "Jarnac",
+    "price": 135000,
+    "description": "М'який коньяк з ароматом ванілі та дуба, ідеальний для особливих випадків.",
+    "image": "/cognac2.jpeg"
+  }
+]

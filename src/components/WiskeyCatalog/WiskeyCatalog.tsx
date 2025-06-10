@@ -1,40 +1,14 @@
 import Image from 'next/image';
 import Wiskey from '../../../public/wiskey.png';
-import './DrinkCatalog.scss';
+import '../DrinksFilter/DrinksFilter.scss';
+import './WiskeyCatalog.scss'
+import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown';
 
 export default function DrinkCatalog() {
   return (
     <aside className="wiskeyCatalog">
       <div className="wiskeyCatalog__list">
-        <div className="dropdowns">
-          <div className="dropdown">
-            <select>
-              <option>Бестселлеры A-Z</option>
-              <option>Бестселлеры Z-A</option>
-            </select>
-          </div>
-
-          <div className="wrapper">
-            <div className="dropdown">
-              <select>
-                <option>Цена ↑</option>
-                <option>Цена ↓</option>
-              </select>
-            </div>
-            <div className="dropdown">
-              <select>
-                <option>Производитель A-Z</option>
-                <option>Производитель Z-A</option>
-              </select>
-            </div>
-            <div className="dropdown">
-              <select>
-                <option>Винтаж ↑</option>
-                <option>Винтаж ↓</option>
-              </select>
-            </div>
-          </div>
-        </div>
+        <CatalogDropdown />
 
         <div className="wiskeyCatalog__list__cards">
           <div className="wiskeyCatalog__list__card">

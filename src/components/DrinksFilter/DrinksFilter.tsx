@@ -1,6 +1,6 @@
 "use client"
 
-import './WiskeyCatalogFilter.scss'
+import './DrinksFilter.scss'
 import { useState } from "react";
 
 const filters = [
@@ -10,7 +10,7 @@ const filters = [
     { title: "Сорт Винограда", content: "Blue, White" },
 ];
 
-export default function WiskeyCatalogFilter() {
+export default function DrinksFilter() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleAccordion = (index: number) => {

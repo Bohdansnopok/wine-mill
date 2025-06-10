@@ -1,0 +1,26 @@
+[
+  {
+    "id": "liquor-1",
+    "category": "liquor",
+    "name": "Hazelnut Cream Liqueur",
+    "year": 2022,
+    "litres": 0.5,
+    "country": "Italy",
+    "city": "Turin",
+    "price": 70000,
+    "description": "Кремовий лікер з горіховим ароматом та м’яким солодким смаком.",
+    "image": "/liquor1.jpeg"
+  },
+  {
+    "id": "liquor-2",
+    "category": "liquor",
+    "name": "Blueberry Herbal Liqueur",
+    "year": 2021,
+    "litres": 0.5,
+    "country": "Germany",
+    "city": "Munich",
+    "price": 68000,
+    "description": "Трав’яний лікер з ягідними нотами, чудовий для коктейлів.",
+    "image": "/liquor2.jpeg"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "rum-1",
+    "category": "rum",
+    "name": "Caribbean Gold Rum",
+    "year": 2018,
+    "litres": 0.75,
+    "country": "Jamaica",
+    "city": "Kingston",
+    "price": 85000,
+    "description": "Ром – дистильований алкогольний напій із цукрової тростини з теплими пряними нотами.",
+    "image": "/rum1.jpeg"
+  },
+  {
+    "id": "rum-2",
+    "category": "rum",
+    "name": "Barbados Spiced Rum",
+    "year": 2020,
+    "litres": 0.7,
+    "country": "Barbados",
+    "city": "Bridgetown",
+    "price": 90000,
+    "description": "Пряний ром з ароматами кориці, ванілі та карамелі.",
+    "image": "/rum2.jpeg"
+  }
+]

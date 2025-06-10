@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delicacies-1",
+    "category": "delicacies",
+    "name": "Truffle Dark Chocolate",
+    "year": 2023,
+    "litres": 0,
+    "country": "Belgium",
+    "city": "Brussels",
+    "price": 50000,
+    "description": "Вишуканий темний шоколад із трюфельною начинкою, ідеальний делікатес до вина.",
+    "image": "/delicacy1.jpeg"
+  },
+  {
+    "id": "delicacies-2",
+    "category": "delicacies",
+    "name": "Smoked Salmon Slices",
+    "year": 2024,
+    "litres": 0,
+    "country": "Norway",
+    "city": "Oslo",
+    "price": 65000,
+    "description": "Делікатесна копчена лосось високої якості, чудово поєднується з шампанським.",
+    "image": "/delicacy2.jpeg"
+  }
+]

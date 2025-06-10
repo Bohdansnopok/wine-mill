@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sparkling-1",
+    "category": "sparkling",
+    "name": "Brut Classic Champagne",
+    "year": 2016,
+    "litres": 0.75,
+    "country": "France",
+    "city": "Reims",
+    "price": 140000,
+    "description": "Класичне шампанське з легкою фруктовою ноткою і м'якою ігристістю.",
+    "image": "/sparkling1.jpeg"
+  },
+  {
+    "id": "sparkling-2",
+    "category": "sparkling",
+    "name": "Prosecco Extra Dry",
+    "year": 2019,
+    "litres": 0.75,
+    "country": "Italy",
+    "city": "Veneto",
+    "price": 95000,
+    "description": "Італійське ігристе вино з ніжним квітковим ароматом.",
+    "image": "/sparkling2.jpeg"
+  }
+]

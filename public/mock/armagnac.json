@@ -1,0 +1,26 @@
+[
+  {
+    "id": "armagnac-1",
+    "category": "armagnac",
+    "name": "Bas-Armagnac Classic",
+    "year": 2008,
+    "litres": 0.7,
+    "country": "France",
+    "city": "Gers",
+    "price": 110000,
+    "description": "Арманьяк – давній французький бренді з глибоким смаком та багатим букетом ароматів.",
+    "image": "/armagnac1.jpeg"
+  },
+  {
+    "id": "armagnac-2",
+    "category": "armagnac",
+    "name": "Vintage Armagnac 1999",
+    "year": 1999,
+    "litres": 0.7,
+    "country": "France",
+    "city": "Armagnac",
+    "price": 180000,
+    "description": "Віковий арманьяк із насиченим фруктовим смаком і тривалим післясмаком.",
+    "image": "/armagnac2.jpeg"
+  }
+]

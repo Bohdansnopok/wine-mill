@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cocktails-1",
+    "category": "cocktails",
+    "name": "Mojito Classic",
+    "year": 2024,
+    "litres": 0.3,
+    "country": "Cuba",
+    "city": "Havana",
+    "price": 40000,
+    "description": "Класичний мохіто з м’ятою, лаймом і білим ромом, освіжаючий та легкий.",
+    "image": "/cocktail1.jpeg"
+  },
+  {
+    "id": "cocktails-2",
+    "category": "cocktails",
+    "name": "Espresso Martini",
+    "year": 2023,
+    "litres": 0.25,
+    "country": "UK",
+    "city": "London",
+    "price": 45000,
+    "description": "Коктейль на основі кави і горілки, чудово підходить для вечірок.",
+    "image": "/cocktail2.jpeg"
+  }
+]
