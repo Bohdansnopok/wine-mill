@@ -1,7 +1,7 @@
 import DrinksFilter from "@/components/DrinksFilter/DrinksFilter";
-import WiskeyCatalog from "../../components/WiskeyCatalog/WiskeyCatalog"
+import SparklingCatalog from "../../components/SparklingCatalog/SparklingCatalog";
 
-export default function WiskeyCatalogPage() {
+export default function SparklingCatalogPage() {
 
     return (
         <>
@@ -10,7 +10,7 @@ export default function WiskeyCatalogPage() {
                     <div className="flexWrapper">
                         <DrinksFilter />
                         <div>
-                            <WiskeyCatalog />
+                            <SparklingCatalog />
                             <button className="catalogLinkOrButton">СМОТРЕТЬ ВСЕ</button>
                         </div>
                     </div>

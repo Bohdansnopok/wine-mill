@@ -1,15 +1,16 @@
 "use client";
 
 import Image from 'next/image';
+import Wiskey from '../../../public/wiskey.png';
 import '../DrinksFilter/DrinksFilter.scss';
 import '../../app/Catalogs.scss'
 import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown';
-import React, { useState } from 'react';
-import { useWhiskey } from '../../hooks/useWiskey';
+import React from 'react';
 import { Drink } from '@/types/Drinks';
+import { useCognac } from '@/hooks/useCognac';
 
-const WiskeyCatalog: React.FC = () => {
-  const { whiskeyDrinks, isLoading, error } = useWhiskey();
+const CognacCatalog: React.FC = () => {
+  const { cognacDrinks, isLoading, error } = useCognac();
 
   return (
     <aside className="catalog">
@@ -20,8 +21,8 @@ const WiskeyCatalog: React.FC = () => {
           {isLoading && <p className='isLoading'>Завантаження...</p>}
           {error && <p className='isLoading'>Ой... Виникла помилка..</p>}
 
-          {!isLoading && !error && whiskeyDrinks.length > 0 ? (
-            whiskeyDrinks.map((drink: Drink) => (
+          {!isLoading && !error && cognacDrinks.length > 0 ? (
+            cognacDrinks.map((drink: Drink) => (
               <div key={drink.id} className="catalog__list__card">
                 <div className="catalog__list__card__product__blackDecor"></div>
                 <div className="catalog__list__card__product">
@@ -56,8 +57,7 @@ const WiskeyCatalog: React.FC = () => {
         </div>
       </div>
     </aside>
-
   );
 }
 
-export default WiskeyCatalog;
+export default CognacCatalog;
