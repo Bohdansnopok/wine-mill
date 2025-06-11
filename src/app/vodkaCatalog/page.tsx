@@ -1,7 +1,7 @@
 import DrinksFilter from "@/components/DrinksFilter/DrinksFilter";
-import RumCatalog from "@/components/RumCatalog/RumCatalog";
+import VodkaCatalog from "@/components/VodkaCatalog/VodkaCatalog";
 
-export default function RumCatalogPage() {
+export default function VodkaCatalogPage() {
 
     return (
         <>
@@ -10,7 +10,7 @@ export default function RumCatalogPage() {
                     <div className="flexWrapper">
                         <DrinksFilter />
                         <div>
-                            <RumCatalog />
+                            <VodkaCatalog />
                             <button className="catalogLinkOrButton">СМОТРЕТЬ ВСЕ</button>
                         </div>
                     </div>
