@@ -64,11 +64,11 @@ export default function Header() {
                 <Link href="/wiskeyCatalog">Виски</Link>
                 <Link href="/cognacCatalog">Коньяк</Link>
                 <Link href="/armagnacCatalog">Арманьяк</Link>
-                <Link href="">Ром</Link>
-                <Link href="">Водка</Link>
-                <Link href="">Ликер</Link>
-                <Link href="">Коктейли</Link>
-                <Link href="">Деликатесы</Link>
+                <Link href="/rumCatalog">Ром</Link>
+                <Link href="/vodkaCatalog">Водка</Link>
+                <Link href="/liquorCatalog">Ликер</Link>
+                <Link href="/cocktailsCatalog">Коктейли</Link>
+                <Link href="/delicaciesCatalog">Деликатесы</Link>
             </div>
             </div>
         </header>
