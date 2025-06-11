@@ -1,7 +1,7 @@
 import DrinksFilter from "@/components/DrinksFilter/DrinksFilter";
-import CognacCatalog from "@/components/CognacCatalog/CognacCatalog";
+import ArmagnacCatalog from "@/components/ArmagnacCatalog/ArmagnacCatalog";
 
-export default function CognacCatalogPage() {
+export default function ArmagnacCatalogPage() {
 
     return (
         <>
@@ -10,7 +10,7 @@ export default function CognacCatalogPage() {
                     <div className="flexWrapper">
                         <DrinksFilter />
                         <div>
-                            <CognacCatalog />
+                            <ArmagnacCatalog />
                             <button className="catalogLinkOrButton">СМОТРЕТЬ ВСЕ</button>
                         </div>
                     </div>

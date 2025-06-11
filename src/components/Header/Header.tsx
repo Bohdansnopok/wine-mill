@@ -63,7 +63,7 @@ export default function Header() {
                 <Link href="/sparklingCatalog">Игристое</Link>
                 <Link href="/wiskeyCatalog">Виски</Link>
                 <Link href="/cognacCatalog">Коньяк</Link>
-                <Link href="">Арманьяк</Link>
+                <Link href="/armagnacCatalog">Арманьяк</Link>
                 <Link href="">Ром</Link>
                 <Link href="">Водка</Link>
                 <Link href="">Ликер</Link>
