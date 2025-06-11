@@ -12,9 +12,9 @@ type WineListProps = {
 };
 
 export default function WineList({ limit }: WineListProps) {
-    const { wines, loading } = useWines();
+  const { wines, isLoading, error } = useWines();
 
-    if (loading) return <p>Завантаження...</p>;
+    if (isLoading) return <p>Завантаження...</p>;
 
     const displayedWines = limit ? wines.slice(0, limit) : wines;
 

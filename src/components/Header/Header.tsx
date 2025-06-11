@@ -16,10 +16,10 @@ export default function Header() {
 
             <div className="container">
                 <div className="headerContent">
-                    <div className="logo">
+                    <Link href="/" className="logo">
                         <Image src={logo} alt="logo" />
                         <p>винная мельница</p>
-                    </div>
+                    </Link>
 
                     <form>
                         <input type="text" className="headerInput" />
@@ -60,9 +60,9 @@ export default function Header() {
 
                 <div className="header__navs">
                 <Link href="/catalog">Вино</Link>
-                <Link href="">Игристое</Link>
+                <Link href="/sparklingCatalog">Игристое</Link>
                 <Link href="/wiskeyCatalog">Виски</Link>
-                <Link href="">Коньяк</Link>
+                <Link href="/cognacCatalog">Коньяк</Link>
                 <Link href="">Арманьяк</Link>
                 <Link href="">Ром</Link>
                 <Link href="">Водка</Link>
