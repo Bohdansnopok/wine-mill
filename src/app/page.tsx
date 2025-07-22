@@ -5,14 +5,15 @@ import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import WineList from "@/components/WineList/WineList";
 import Link from "next/link";
-import { LoginModal } from "@/components/LoginModal/LoginModal";
-import { RegisterModal } from "@/components/RegisterModal/RegisterModal";
+import SignUp from "@/components/SingUp/SingUp";
+import SignIn from "@/components/SignIn/SignIn";
 
 export default function Home() {
 
   return (
     <>
       <BannerSlider />
+      <SignIn />
       <Offers />
       <section className="catalogWrapper">
         <div className="container">
