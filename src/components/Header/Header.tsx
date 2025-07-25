@@ -4,7 +4,6 @@ import "./Header.scss"
 import logo from "../../../public/logo.svg"
 import search from "../../../public/search.svg"
 import geo from "../../../public/geo.svg"
-import { useRouter } from 'next/router';
 import Link from "next/link";
 
 export default function Header() {
@@ -34,7 +33,7 @@ export default function Header() {
                                 <a href="">Регистрация</a>
                                 <a href="">Вход</a>
                             </div>
-                            <a href="#">Личный кабинет</a>
+                            <Link href="/profile">Личный кабинет</Link>
                         </div>
                     </div>
 

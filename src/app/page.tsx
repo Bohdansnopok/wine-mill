@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <>
       <BannerSlider />
-      <SignIn />
       <Offers />
       <section className="catalogWrapper">
         <div className="container">
