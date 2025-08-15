@@ -15,7 +15,6 @@ type WineListProps = {
 export default function WineList({ limit }: WineListProps) {
   const { wines, isLoading, error } = useWines();
     const addToCart = useCartStore((state) => state.addToCart);
-const product = useCartStore(state => state.product); // Пример получения переменной из zustand
 
 
     if (isLoading) return <p>Завантаження...</p>;

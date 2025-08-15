@@ -8,9 +8,11 @@ import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown';
 import React from 'react';
 import { useSparkling } from '../../hooks/useSparkling';
 import { Drink } from '@/types/Drinks';
+import { useCartStore } from '@/store/cartStore';
 
 const SparklingCatalog: React.FC = () => {
   const { sparklingDrinks, isLoading, error } = useSparkling();
+  const addToCart = useCartStore((state) => state.addToCart);
 
   return (
     <aside className="catalog">
@@ -45,7 +47,11 @@ const SparklingCatalog: React.FC = () => {
                     <div>{drink.price} grn</div>
                   </div>
 
-                  <button className='redBtn'>В КОРЗИНУ</button>
+                  <button className='redBtn' onClick={() => addToCart({
+                    ...drink,
+                    createdAt: drink.year || '',
+                    liters: drink.litres || 0,
+                  })}>В КОРЗИНУ</button>
                 </div>
               </div>
             ))

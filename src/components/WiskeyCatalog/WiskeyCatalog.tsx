@@ -7,9 +7,11 @@ import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown';
 import React, { useState } from 'react';
 import { useWhiskey } from '../../hooks/useWiskey';
 import { Drink } from '@/types/Drinks';
+import { useCartStore } from '@/store/cartStore';
 
 const WiskeyCatalog: React.FC = () => {
   const { whiskeyDrinks, isLoading, error } = useWhiskey();
+  const addToCart = useCartStore((state) => state.addToCart)
 
   return (
     <aside className="catalog">
@@ -44,7 +46,18 @@ const WiskeyCatalog: React.FC = () => {
                     <div>{drink.price} grn</div>
                   </div>
 
-                  <button className='redBtn'>В КОРЗИНУ</button>
+                  <button
+                    className='redBtn'
+                    onClick={() =>
+                      addToCart({
+                        ...drink,
+                        createdAt: drink.year || '', 
+                        liters: drink.litres || 0,   
+                      })
+                    }
+                  >
+                    В КОРЗИНУ
+                  </button>
                 </div>
               </div>
             ))

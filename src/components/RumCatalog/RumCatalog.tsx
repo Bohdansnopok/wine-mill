@@ -8,9 +8,11 @@ import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown';
 import React from 'react';
 import { Drink } from '@/types/Drinks';
 import { useRum } from '@/hooks/useRum';
+import { useCartStore } from '@/store/cartStore';
 
 const RumCatalog: React.FC = () => {
   const { rumDrinks, isLoading, error } = useRum();
+  const addToCart = useCartStore((state) => state.addToCart);
 
   return (
     <aside className="catalog">
@@ -45,7 +47,11 @@ const RumCatalog: React.FC = () => {
                     <div>{drink.price} grn</div>
                   </div>
 
-                  <button className='redBtn'>В КОРЗИНУ</button>
+                  <button className='redBtn' onClick={() => addToCart({
+                    ...drink,
+                    createdAt: drink.year || '',
+                    liters: drink.litres || 0,
+                  })}>В КОРЗИНУ</button>
                 </div>
               </div>
             ))
