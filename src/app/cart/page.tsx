@@ -1,69 +1,37 @@
 "use client"
 
-import { useState } from 'react';
 import { ArrowRight } from 'lucide-react'
 import './cart.scss'
 import Image from 'next/image'
-import wine from '../../../public/smallWine.png'
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import Link from "next/link";
 import YouMayAlsoLike from '@/components/YouMayAlsoLike/YouMayAlsoLike';
 import Subscribe from '@/components/Subscribe/Subscribe';
-import SommelierChoise from '@/components/SommelierChoise/SommelierChoise';
-
-// Пример массива товаров (можно заменить на реальные данные)
-const initialProducts = [
-    {
-        id: 1,
-        name: "LE MEAL",
-        year: "2010/0.75 л",
-        country: "франция/M.CHAPOUTIER",
-        price: 9000,
-        quantity: 1,
-        image: wine,
-    },
-    {
-        id: 2,
-        name: "LE MEAL",
-        year: "2010/0.75 л",
-        country: "франция/M.CHAPOUTIER",
-        price: 12000,
-        quantity: 1,
-        image: wine,
-    },
-    {
-        id: 3,
-        name: "LE MEAL",
-        year: "2010/0.75 л",
-        country: "франция/M.CHAPOUTIER",
-        price: 3000,
-        quantity: 1,
-        image: wine,
-    },
-];
+import { useCartStore } from '@/store/cartStore';
+import { useState } from 'react';
+import { usePlacingVisibilityStore } from '@/store/PlacingVisibilityStore';
+import PlacingModal from '@/components/PlacingModal/PlacingModal';
 
 export default function Cart() {
-    const [products, setProducts] = useState(initialProducts);
+    const deliviery = 400;
+const cart = useCartStore((state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const placingOrder = usePlacingVisibilityStore((state) => state.show);
+  
+  const [quantities, setQuantities] = useState<Record<number, number>>(
+    () => cart.reduce((acc, product) => {
+      acc[product.id] = 1; // начальное значение
+      return acc;
+    }, {} as Record<number, number>)
+  );
 
-    const handleDecrement = (id: number) => {
-        setProducts(products =>
-            products.map(product =>
-                product.id === id
-                    ? { ...product, quantity: Math.max(1, product.quantity - 1) }
-                    : product
-            )
-        );
-    };
+  const handleQuantityChange = (id: number, value: number) => {
+    setQuantities((prev) => ({
+      ...prev,
+      [id]: value < 1 ? 1 : value
+    }));
+  };
 
-    const handleIncrement = (id: number) => {
-        setProducts(products =>
-            products.map(product =>
-                product.id === id
-                    ? { ...product, quantity: Math.min(20, product.quantity + 1) }
-                    : product
-            )
-        );
-    };
+  
 
     return (
         <section className="cart">
@@ -96,41 +64,84 @@ export default function Cart() {
                             <div className="cart__content__list__top__item all">ВСЕГО</div>
                         </div>
 
-                        {products.map(product => (
+        {cart.map((product) => (
                             <div className="cart__content__list__content" key={product.id}>
                                 <div className="cart__content__list__content__item product">
                                     <div className='cart__content__list__content__item__image'>
-                                        <div className='closeIcon'><IoMdCloseCircleOutline /></div>
-                                        <Image src={product.image} alt='wine' />
+                                        <div className='closeIcon' onClick={() => removeFromCart(product.id)}><IoMdCloseCircleOutline /></div>
+                                        <Image src={product.image} alt='wine' width={50} height={150}/>
                                     </div>
                                     <div className="cart__content__list__content__item__wineInfo">
-                                        <div>
-                                            {product.name} <br />
-                                            HERMITAGE <br />
+                                        <div className='cart__content__list__content__item__wineInfo__name'>
+                                            {product.name}
                                         </div>
-                                        <p className="data">{product.year}</p>
+                                        <div className='cart__content__list__content__infoWrapper'>
+                                        <p className="data">{product.createdAt }</p>
+                                        /
+                                        <p className="data">{product.liters }</p>
+                                        </div>
+                                        <div className='cart__content__list__content__infoWrapper'>
                                         <p className="country">{product.country}</p>
+                                        /
+                                        <p className="city">{product.city}</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="cart__content__list__content__item price">
-                                    {product.price.toLocaleString()}
+                                    {product.price}
                                 </div>
+                                
                                 <div className="cart__content__list__content__item quantity">
-                                    <div onClick={() => handleDecrement(product.id)} style={{ cursor: 'pointer' }}>-</div>
-                                    <p>{product.quantity}</p>
-                                    <div onClick={() => handleIncrement(product.id)} style={{ cursor: 'pointer' }}>+</div>
+<input
+  type="number"
+                    min={1}
+                    max={99}
+                    value={quantities[product.id] || 1}
+                    onChange={(e) =>
+                      handleQuantityChange(
+                        product.id,
+                        Number(e.target.value)
+                      )
+                    }
+  className='cart__content__list__content__item__quantity__input'
+/>                         
                                 </div>
                                 <div className="cart__content__list__content__item all">
-                                    {(product.price * product.quantity).toLocaleString()}
+                                    {product.price * quantities[product.id]}
                                 </div>
                             </div>
-                        ))}
+                                    ))}
+
+                    </div>
+
+                    <div className="cart__content__prices">
+                        <div className="cart__content__prices__info">
+                          <div className="cart__content__prices__info__item">
+                            <div className="price__text">СУММА</div>
+                            <div className="price__number">
+                              {cart.reduce((sum, product) => sum + product.price * (quantities[product.id] || 1), 0)}
+                            </div>
+                          </div>
+                          {/* <div className="cart__content__prices__info__item"><div className="price__text">СКИДКА</div> <div className="price__number">- 0</div></div> */}
+                          <div className="cart__content__prices__info__item"><div className="price__text">ДОСТАВКА</div> <div className="price__number">{deliviery}</div></div>
+                          <div className="cart__content__prices__info__item"><div className="price__text">К ОПЛАТЕ</div> <div className="price__number">
+                                                          {deliviery + cart.reduce((sum, product) => sum + product.price * (quantities[product.id] || 1), 0)}</div></div>
+                        </div>
+                        <button className="redBtn" onClick={placingOrder}>ОФОРМИТЬ ЗАКАЗ</button>
+                        
+                        <div className="cart__content__prices__peyment">
+                            Способы оплаты: <br />
+                            - картой Visa и MasterCard <br />
+                            - наличными при получении  <br />
+                        </div>
                     </div>
                 </div>
 
                 <YouMayAlsoLike />
             </div>
             <Subscribe />
+
+            <PlacingModal />
         </section>
     )
 }

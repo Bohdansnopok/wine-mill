@@ -6,6 +6,7 @@ import React from "react";
 import './WineList.scss'
 import wine from '../../../public/Wine.png'
 import { useWines, Wine } from '@/hooks/useWines';
+import { useCartStore } from '@/store/cartStore';
 
 type WineListProps = {
   limit?: number;
@@ -13,6 +14,9 @@ type WineListProps = {
 
 export default function WineList({ limit }: WineListProps) {
   const { wines, isLoading, error } = useWines();
+    const addToCart = useCartStore((state) => state.addToCart);
+const product = useCartStore(state => state.product); // Пример получения переменной из zustand
+
 
     if (isLoading) return <p>Завантаження...</p>;
 
@@ -75,7 +79,7 @@ export default function WineList({ limit }: WineListProps) {
                                     <div>{wine.price}</div>
                                 </div>
 
-                                <button className='redBtn'>В КОРЗИНУ</button>
+                                <button className='redBtn' onClick={() => addToCart(wine)}>В КОРЗИНУ</button>
                             </div>
                         </div>
                     ))}

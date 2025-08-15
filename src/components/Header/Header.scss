@@ -68,13 +68,13 @@
                 align-items: center;
                 justify-content: space-between;
 
-                a {
+                a, button {
                     font-size: 9px;
                     color: #666666;
                     transition: color 0.3s;
                 }
 
-                a:hover {
+                a:hover, button:hover {
                     font-size: 9px;
                     color: #555555;
                 }

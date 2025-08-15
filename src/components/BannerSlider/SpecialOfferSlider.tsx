@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import './SpecialOfferSlider.scss'
+import { usePlacingVisibilityStore } from '@/store/PlacingVisibilityStore';
 
 const slides = [
     {
@@ -19,6 +20,7 @@ const slides = [
 
 export default function BannerSlider() {
     const [current, setCurrent] = useState(0);
+      const show = usePlacingVisibilityStore((state) => state.show);
 
     const nextSlide = () => {
         setCurrent((prev) => (prev + 1) % slides.length);
@@ -41,7 +43,8 @@ export default function BannerSlider() {
                         <div className="slide-title">
                             {slide.title}
                         </div>
-                        <a href="#">ЗАКАЗАТЬ ВИНО</a>
+                        <button onClick={show}>ЗАКАЗАТЬ ВИНО</button>
+                        <button>Добавить в корзину</button>
                     </div>
                 </div>
             ))}

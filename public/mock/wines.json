@@ -7,7 +7,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "1"
+    "id": "1",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -17,7 +18,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "75000",
-    "id": "2"
+    "id": "2",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -27,7 +29,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "3"
+    "id": "3",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -37,7 +40,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "4"
+    "id": "4",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -47,7 +51,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "5"
+    "id": "5",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -57,7 +62,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "6"
+    "id": "6",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -67,7 +73,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "7"
+    "id": "7",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -77,7 +84,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "8"
+    "id": "8",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -87,7 +95,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "9"
+    "id": "9",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -97,7 +106,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "10"
+    "id": "10",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -107,7 +117,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "11"
+    "id": "11",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -117,7 +128,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "12"
+    "id": "12",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -127,7 +139,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "13"
+    "id": "13",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -137,7 +150,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "14"
+    "id": "14",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -147,7 +161,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "15"
+    "id": "15",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -157,7 +172,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "16"
+    "id": "16",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -167,7 +183,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "17"
+    "id": "17",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -177,7 +194,8 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "18"
+    "id": "18",
+    "quantity": 1
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
@@ -187,6 +205,7 @@
     "country": "France",
     "city": "Hermitage",
     "price": "15000",
-    "id": "19"
+    "id": "19",
+    "quantity": 1
   }
 ] 
