@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="topTextLine">
-        ДОСТУПНА СРОЧНАЯ ДОСТАВКА ПО КИЕВУ - <a href="#">ДЕТАЛЬНЫЕ УСЛОВИЯ</a>
+        УСЛОВИЯ ЗАКАЗА И ДОСТАВКИ - <Link href="/details">ДЕТАЛЬНЫЕ УСЛОВИЯ</Link>
       </div>
 
       <div className="container">
