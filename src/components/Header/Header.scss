@@ -1,6 +1,7 @@
 .header {
     padding: 7px 0 0 0;
     color: white;
+    position: relative;
 }
 
 .topTextLine {
@@ -37,6 +38,10 @@
         }
     }
 
+    .headerForm {
+        position: relative;
+    }
+
     .headerInput {
         width: 557px;
         padding: 12px;
@@ -51,6 +56,13 @@
         background: #7a0000;
         height: 40px;
         padding: 0 13px;
+    }
+
+    .headerInput__errorMessage {
+        position: absolute;
+        top: -20px;
+        color: red;
+        font-size: 15px;
     }
 
     .headerContent__items {
@@ -68,13 +80,15 @@
                 align-items: center;
                 justify-content: space-between;
 
-                a, button {
+                a,
+                button {
                     font-size: 9px;
                     color: #666666;
                     transition: color 0.3s;
                 }
 
-                a:hover, button:hover {
+                a:hover,
+                button:hover {
                     font-size: 9px;
                     color: #555555;
                 }
@@ -112,7 +126,7 @@
 .header__navs {
     display: flex;
     align-items: center;
-    background-color: #1B1918;
+    background-color: #1b1918;
     gap: 40px;
     font-size: 12px;
     padding: 6px 45px 11px 45px;
@@ -121,9 +135,9 @@
     a {
         color: white;
         text-decoration: none;
-        transition: color .3s;
+        transition: color 0.3s;
     }
-    
+
     a:hover {
         color: #666666;
     }

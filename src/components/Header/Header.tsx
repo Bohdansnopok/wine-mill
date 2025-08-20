@@ -8,15 +8,30 @@ import geo from "../../../public/geo.svg";
 import Link from "next/link";
 import { useVisibilityStore } from "@/store/registerVisibilityStore";
 import { useLogInVisibilityStore } from "@/store/logInVisibilityStore";
+import { useForm } from "react-hook-form";
 
 export default function Header() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>({
+    mode: "onBlur",
+  });
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    reset();
+  };
   const show = useVisibilityStore((state) => state.show);
   const showLogIn = useLogInVisibilityStore((state) => state.show);
 
   return (
     <header className="header">
       <div className="topTextLine">
-        УСЛОВИЯ ЗАКАЗА И ДОСТАВКИ - <Link href="/details">ДЕТАЛЬНЫЕ УСЛОВИЯ</Link>
+        УСЛОВИЯ ЗАКАЗА И ДОСТАВКИ -{" "}
+        <Link href="/details">ДЕТАЛЬНЫЕ УСЛОВИЯ</Link>
       </div>
 
       <div className="container">
@@ -26,8 +41,14 @@ export default function Header() {
             <p>винная мельница</p>
           </Link>
 
-          <form>
-            <input type="text" className="headerInput" />
+          <form onSubmit={handleSubmit(onSubmit)} className="headerForm">
+            <input
+              {...register("name", {
+                required: "Напишите название товара который хочете найти",
+              })}
+              className="headerInput"
+            />
+            {errors.name && <p className="headerInput__errorMessage">{errors.name.message}</p>}
             <button type="submit" className="headerInput__submit">
               <Image src={search} alt="search icon" />
             </button>

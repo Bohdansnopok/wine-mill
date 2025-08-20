@@ -65,6 +65,7 @@
 
       label {
         color: gray;
+        position: relative;
       }
 
       input {
@@ -97,4 +98,12 @@
     margin-bottom: 10px;
     margin-right: 10px;
   }
+}
+
+.modalError {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+  position: absolute;
+  bottom: -20px;
 }

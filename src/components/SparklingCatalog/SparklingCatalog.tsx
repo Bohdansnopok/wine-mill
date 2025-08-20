@@ -4,11 +4,11 @@ import Image from 'next/image';
 import Wiskey from '../../../public/wiskey.png';
 import '../DrinksFilter/DrinksFilter.scss';
 import '../../app/Catalogs.scss'
-import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown';
+import { CatalogDropdown } from '../CatalogDropdown/CatalogDropdown.jsx';
 import React from 'react';
-import { useSparkling } from '../../hooks/useSparkling';
-import { Drink } from '@/types/Drinks';
-import { useCartStore } from '@/store/cartStore';
+import { useSparkling } from '../../hooks/useSparkling.js';
+import { Drink } from '@/types/Drinks.js';
+import { useCartStore } from '@/store/cartStore.js';
 
 const SparklingCatalog: React.FC = () => {
   const { sparklingDrinks, isLoading, error } = useSparkling();
