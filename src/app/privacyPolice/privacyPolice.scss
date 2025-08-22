@@ -1,0 +1,38 @@
+.privacyPolice {
+    .container {
+        padding: 45px;
+        color: white;
+    }
+
+    &__respect {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    &__aboutUs {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        margin-bottom: 20px;
+        display: block;
+        transition: all 0.3s;
+        width: fit-content;
+    }
+
+    &__aboutUs:hover {
+        text-decoration: underline;
+        color: blueviolet;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__title {
+            margin: 10px 0;
+            font-size: 22px;
+            font-weight: 700;
+        }
+    }
+}

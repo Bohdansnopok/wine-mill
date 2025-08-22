@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './Footer.scss'
 
 export default function Footer() {
@@ -19,7 +20,7 @@ export default function Footer() {
                         <div className="footer__column__title">Shop</div>
                         <a href="#">All Wines</a>
                         <a href="#">Single vineyard selection</a>
-                        <a href="#" className='copyright copyright_link'>Privacy police</a>
+                        <Link href="/privacyPolice" className='copyright copyright_link'>Privacy police</Link>
                     </div>
 
                     <div className='footer__column'>

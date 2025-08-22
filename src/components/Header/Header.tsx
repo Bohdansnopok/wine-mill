@@ -24,6 +24,7 @@ export default function Header() {
     console.log(data);
     reset();
   };
+  
   const show = useVisibilityStore((state) => state.show);
   const showLogIn = useLogInVisibilityStore((state) => state.show);
 
