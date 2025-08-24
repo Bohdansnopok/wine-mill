@@ -1,9 +1,9 @@
 import Image from "next/image";
-import wine from "../../../../public/Wine.png";
 import "./ItemDetails.scss";
 import "../../../components/WineList/WineList.scss";
-import products from "../../../../public/mock/wines.json";
-import { Drinks } from "../../../types/Drinks.js";
+import wines from "../../../../public/mock/wines.json";
+import whiskey from "../../../../public/mock/wiskey.json";
+import { Drink } from "../../../types/Drinks.js";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
 import Subscribe from "@/components/Subscribe/Subscribe";
@@ -13,9 +13,8 @@ interface ProductPageProps {
 }
 
 export default function ItemDetails({ params }: ProductPageProps) {
-  const product: Drinks | undefined = products.find(
-    (p) => String(p.id) === params.id,
-  );
+  const allDrinks: Drink[] = [...wines, ...whiskey];
+  const product = allDrinks.find((p) => p.id === params.id);
 
   return (
     <section className="itemDetails">
@@ -25,8 +24,10 @@ export default function ItemDetails({ params }: ProductPageProps) {
             <div className="itemDetails__image__wine__blackDecor"></div>
             <div className="itemDetails__image__wine">
               <Image
-                src={wine}
-                alt=""
+                src={product.image || null}
+                alt="product"
+                width={100}
+                height={300}
                 className="itemDetails__image__wineImage"
               />
             </div>
@@ -47,8 +48,12 @@ export default function ItemDetails({ params }: ProductPageProps) {
 
             <div className="itemDetails__content__buySection">
               <div className="itemDetails__content__buySection__info">
-                <div>{product.createdAt}/{product.liters} л</div>
-                <div>{product.country}/{product.city}</div>
+                <div>
+                  {product.createdAt}/{product.liters} л
+                </div>
+                <div>
+                  {product.country}/{product.city}
+                </div>
               </div>
               <div className="itemDetails__content__buySection__addToCart">
                 <input
@@ -66,7 +71,9 @@ export default function ItemDetails({ params }: ProductPageProps) {
                   <p className="itemDetails__content__infoCols__col__title">
                     ГЕОГРАФИЯ:
                   </p>
-                  <div>{product.country} - {product.city}</div>
+                  <div>
+                    {product.country} - {product.city}
+                  </div>
                 </div>
                 <div>
                   <p className="itemDetails__content__infoCols__col__title">

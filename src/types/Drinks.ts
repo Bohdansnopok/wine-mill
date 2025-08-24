@@ -1,9 +1,9 @@
+
 export interface Drink {
   id: string;
-  category: string;
   name: string;
-  year: number;
-  litres: number;
+  createdAt: string;
+  liters: number;
   country: string;
   city: string;
   price: number;
@@ -11,10 +11,11 @@ export interface Drink {
   image: string;
   quantity: number;
   classification: string;
-  FORTRESS: 7.5;
+  FORTRESS: number;
   SUGAR: string;
   IMPORTER: string;
   RATING: string;
   taste: string;
   legend: string;
+  vinification: string;
 }
