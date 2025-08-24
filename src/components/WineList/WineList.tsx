@@ -7,6 +7,7 @@ import './WineList.scss'
 import wine from '../../../public/Wine.png'
 import { useWines, Wine } from '@/hooks/useWines';
 import { useCartStore } from '@/store/cartStore';
+import Link from 'next/link';
 
 type WineListProps = {
   limit?: number;
@@ -57,7 +58,7 @@ export default function WineList({ limit }: WineListProps) {
 
                 <div className="wineCatalog__list__cards">
                     {displayedWines.map((wine: Wine) => (
-                        <div key={wine.id} className="wineCatalog__list__card">
+                        <Link href={`/product/${wine.id}`} key={wine.id} className="wineCatalog__list__card">
                             <div className="wineCatalog__list__card__wine__blackDecor"></div>
                             <div className="wineCatalog__list__card__wine"><Image src={wine.image} alt={wine.name} height={349} width={99} className='wineCatalog__list__card__wineImage' /></div>
                             <p className='wineCatalog__list__card__title'>
@@ -80,7 +81,7 @@ export default function WineList({ limit }: WineListProps) {
 
                                 <button className='redBtn' onClick={() => addToCart(wine)}>В КОРЗИНУ</button>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

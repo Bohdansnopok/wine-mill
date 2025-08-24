@@ -9,4 +9,12 @@ export interface Drink {
   price: number;
   description: string;
   image: string;
+  quantity: number;
+  classification: string;
+  FORTRESS: 7.5;
+  SUGAR: string;
+  IMPORTER: string;
+  RATING: string;
+  taste: string;
+  legend: string;
 }

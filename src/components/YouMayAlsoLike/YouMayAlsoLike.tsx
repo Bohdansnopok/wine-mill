@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import wine from '../../../public/Wine.png'
-import '../../app/itemDetails/ItemDetails.scss';
+import '../../app/product/[id]/ItemDetails.scss';
 import '../../components/WineList/WineList.scss'
 import Link from "next/link";
 
