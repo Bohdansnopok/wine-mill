@@ -3,6 +3,7 @@ import "./ItemDetails.scss";
 import "../../../components/WineList/WineList.scss";
 import wines from "../../../../public/mock/wines.json";
 import whiskey from "../../../../public/mock/wiskey.json";
+import sparkling from "../../../../public/mock/sparkling.json";
 import { Drink } from "../../../types/Drinks.js";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
@@ -13,7 +14,7 @@ interface ProductPageProps {
 }
 
 export default function ItemDetails({ params }: ProductPageProps) {
-  const allDrinks: Drink[] = [...wines, ...whiskey];
+  const allDrinks: Drink[] = [...wines, ...whiskey, ...sparkling];
   const product = allDrinks.find((p) => p.id === params.id);
 
   return (

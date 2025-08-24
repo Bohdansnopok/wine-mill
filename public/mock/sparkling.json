@@ -1,26 +1,50 @@
 [
   {
     "id": "sparkling-1",
-    "category": "sparkling",
-    "name": "Brut Classic Champagne",
-    "year": 2016,
-    "litres": 0.75,
-    "country": "France",
-    "city": "Reims",
-    "price": 140000,
-    "description": "Класичне шампанське з легкою фруктовою ноткою і м'якою ігристістю.",
-    "image": "/sparkling1.jpeg"
+    "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "name": "OPUS ONE",
+    "createdAt": "2014",
+    "liters": 0.75,
+    "country": "USA",
+    "city": "Napa Valley",
+    "price": 32000,
+    "quantity": 1,
+    "classification": "Napa Valley Sparkling Wine",
+    "FORTRESS": 12.5,
+    "SUGAR": "Brut",
+    "IMPORTER": "Mondavi & Rothschild",
+    "RATING": "JS 97",
+    "VARIETY COMPOSITION": [
+      "Chardonnay",
+      "Pinot Noir"
+    ],
+    "description": "Изысканный игристый букет с ароматами зеленого яблока, цитрусовых и нежных цветочных нот.",
+    "taste": "Свежее и живое, с тонкой кремовой текстурой, нотами белых фруктов и легкой минеральностью. Долгое, чистое послевкусие.",
+    "legend": "Создан в лучших традициях Napa Valley, это игристое вино сочетает яркость и элегантность, идеально для праздников и особых моментов.",
+    "vinification": "Традиционный метод шампанизации с вторичной ферментацией в бутылке. Выдержка на осадке 24 месяца для создания тонкой перляции и глубины вкуса."
   },
   {
     "id": "sparkling-2",
-    "category": "sparkling",
-    "name": "Prosecco Extra Dry",
-    "year": 2019,
-    "litres": 0.75,
-    "country": "Italy",
-    "city": "Veneto",
-    "price": 95000,
-    "description": "Італійське ігристе вино з ніжним квітковим ароматом.",
-    "image": "/sparkling2.jpeg"
+    "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "name": "OPUS ONEIPOSITOS",
+    "createdAt": "2014",
+    "liters": 0.75,
+    "country": "USA",
+    "city": "Napa Valley",
+    "price": 32000,
+    "quantity": 1,
+    "classification": "Napa Valley Sparkling Wine",
+    "FORTRESS": 12.5,
+    "SUGAR": "Brut",
+    "IMPORTER": "Mondavi & Rothschild",
+    "RATING": "JS 97",
+    "VARIETY COMPOSITION": [
+      "Chardonnay",
+      "Pinot Noir"
+    ],
+    "description": "Изысканный игристый букет с ароматами зеленого яблока, цитрусовых и нежных цветочных нот.",
+    "taste": "Свежее и живое, с тонкой кремовой текстурой, нотами белых фруктов и легкой минеральностью. Долгое, чистое послевкусие.",
+    "legend": "Создан в лучших традициях Napa Valley, это игристое вино сочетает яркость и элегантность, идеально для праздников и особых моментов.",
+    "vinification": "Традиционный метод шампанизации с вторичной ферментацией в бутылке. Выдержка на осадке 24 месяца для создания тонкой перляции и глубины вкуса."
   }
 ]
