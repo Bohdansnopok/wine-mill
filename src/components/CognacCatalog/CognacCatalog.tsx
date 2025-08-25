@@ -9,6 +9,7 @@ import React from 'react';
 import { Drink } from '@/types/Drinks';
 import { useCognac } from '@/hooks/useCognac';
 import { useCartStore } from '@/store/cartStore';
+import Link from 'next/link';
 
 const CognacCatalog: React.FC = () => {
   const { cognacDrinks, isLoading, error } = useCognac();
@@ -25,7 +26,7 @@ const CognacCatalog: React.FC = () => {
 
           {!isLoading && !error && cognacDrinks.length > 0 ? (
             cognacDrinks.map((drink: Drink) => (
-              <div key={drink.id} className="catalog__list__card">
+              <Link href={`/product/${drink.id}`} key={drink.id} className="catalog__list__card">
                 <div className="catalog__list__card__product__blackDecor"></div>
                 <div className="catalog__list__card__product">
                   <Image src={drink.image} alt='' width={133} height={320} className='catalog__list__card__image' />
@@ -53,7 +54,7 @@ const CognacCatalog: React.FC = () => {
                     liters: drink.litres || 0,
                   })}>В КОРЗИНУ</button>
                 </div>
-              </div>
+              </Link>
             ))
           ) : (
             !isLoading && !error && (
