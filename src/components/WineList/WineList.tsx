@@ -76,7 +76,7 @@ export default function WineList({ limit }: WineListProps) {
                             <div className="wineCatalog__list__card__priceAndCart">
                                 <div className="wineCatalog__list__card__price">
                                     <p>ЦЕНА ЗА 1 ШТ</p>
-                                    <div>{wine.price}</div>
+                                    <div>{wine.price} grn</div>
                                 </div>
 
                                 <button className='redBtn' onClick={() => addToCart(wine)}>В КОРЗИНУ</button>

@@ -28,12 +28,11 @@ export default function ItemDetails({ params }: ProductPageProps) {
       <div className="container">
         <div className="itemDetails__flexWrapper">
           <div className="itemDetails__image">
-            <div className="itemDetails__image__wine__blackDecor"></div>
             <div className="itemDetails__image__wine">
               <Image
                 src={product.image || null}
                 alt="product"
-                width={100}
+                width={200}
                 height={300}
                 className="itemDetails__image__wineImage"
               />
@@ -49,7 +48,7 @@ export default function ItemDetails({ params }: ProductPageProps) {
                 <div className="itemDetails__content__overview__price__subtitle">
                   ЦЕНА ЗА 1 ШТ
                 </div>
-                <div>{product.price} $</div>
+                <div>{product.price} grn</div>
               </div>
             </div>
 
@@ -86,7 +85,7 @@ export default function ItemDetails({ params }: ProductPageProps) {
                   <p className="itemDetails__content__infoCols__col__title">
                     КРЕПОСТЬ:
                   </p>
-                  <div>{product.FORTRESS}</div>
+                  <div>{product.FORTRESS} %</div>
                 </div>
                 <div>
                   <p className="itemDetails__content__infoCols__col__title">

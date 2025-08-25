@@ -26,15 +26,14 @@ const WiskeyCatalog: React.FC = () => {
           {!isLoading && !error && whiskeyDrinks.length > 0 ? (
             whiskeyDrinks.map((drink: Drink) => (
               <Link href={`/product/${drink.id}`} key={drink.id} className="catalog__list__card">
-                <div className="catalog__list__card__product__blackDecor"></div>
                 <div className="catalog__list__card__product">
-                  <Image src={drink.image} alt='' width={133} height={320} className='catalog__list__card__image' />
+                  <Image src={drink.image} alt='' width={233} height={320} className='catalog__list__card__image' />
                 </div>
                 <p className='catalog__list__card__title'>
                   {drink.name}
                 </p>
                 <div className="catalog__list__card__year">
-                  {drink.year}/{drink.litres}л
+                  {drink.createdAt}/{drink.liters}л
                 </div>
 
                 <div className="catalog__list__card__country">
