@@ -1,8 +1,7 @@
 import Image from "next/image";
-import "./ItemDetails.scss";
+import "../../product/[id]/ItemDetails.scss";
 import "../../../components/WineList/WineList.scss";
-import whiskey from "../../../../public/mock/wiskey.json";
-import sparkling from "../../../../public/mock/sparkling.json";
+import wines from "../../../../public/mock/wines.json";
 import { Drink } from "../../../types/Drinks.js";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
@@ -13,8 +12,7 @@ interface ProductPageProps {
 }
 
 export default function ItemDetails({ params }: ProductPageProps) {
-  const allDrinks: Drink[] = [...whiskey, ...sparkling];
-  const product = allDrinks.find((p) => p.id === params.id);
+  const product = wines.find((p) => p.id === params.id);
 
   return (
     <section className="itemDetails">
@@ -141,6 +139,15 @@ export default function ItemDetails({ params }: ProductPageProps) {
                 </div>
                 <div className="itemDetails__content__description__part__content">
                   {product.legend}
+                </div>
+              </div>
+
+              <div className="itemDetails__content__description__part">
+                <div className="itemDetails__content__description__part__title">
+                  винификация:
+                </div>
+                <div className="itemDetails__content__description__part__content">
+                  {product.vinification}
                 </div>
               </div>
             </div>
