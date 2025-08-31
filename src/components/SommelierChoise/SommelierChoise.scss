@@ -46,4 +46,16 @@
             margin-top: 50px;
         }
     }
+
+    button {
+        color: white;
+        display: block;
+        margin: 10px auto 0 auto;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    button:hover {
+        color: burlywood;
+    }
 }

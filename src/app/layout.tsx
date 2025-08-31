@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { RegisterModal } from "@/components/RegisterModal/RegisterModal";
 import { LoginModal } from "@/components/LoginModal/LoginModal";
+import ConsultationModal from "@/components/СonsultationModal/СonsultationModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header />
         <RegisterModal />
-      <LoginModal />
+        <LoginModal />
+        <ConsultationModal />
         {children}
         <Footer />
       </body>

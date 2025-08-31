@@ -1,6 +1,7 @@
 import './blogItemDetails.scss'
 import { ArrowLeft } from 'lucide-react';
 import blogsData from '../../../../public/mock/blogs.json'
+import Link from 'next/link';
 
 interface BlogPageProps {
   params: { id: string };
@@ -12,7 +13,7 @@ const blogId = Number(params.id);
     return (
         <section className="blogitemDetails">
             <div className="container">
-                <a href=""><ArrowLeft /></a>
+                <Link href="/blog"><ArrowLeft /></Link>
 
                 <p>
                     {blog?.content}
