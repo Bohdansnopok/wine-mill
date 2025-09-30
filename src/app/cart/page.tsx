@@ -10,6 +10,7 @@ import { useCartStore } from "@/store/cartStore";
 import { useEffect, useState } from "react";
 import { usePlacingVisibilityStore } from "@/store/PlacingVisibilityStore";
 import PlacingModal from "@/components/PlacingModal/PlacingModal";
+import { toast } from "react-toastify";
 
 export default function Cart() {
   const deliviery = 400;
@@ -79,7 +80,11 @@ export default function Cart() {
                   <div className="cart__content__list__content__item__image">
                     <div
                       className="closeIcon"
-                      onClick={() => removeFromCart(product.id)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        removeFromCart(product.id)
+                        toast.success("Товар удален из корзины");
+                      }}
                     >
                       <IoMdCloseCircleOutline />
                     </div>

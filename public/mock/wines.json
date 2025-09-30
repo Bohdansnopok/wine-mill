@@ -1,6 +1,7 @@
 [
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "L’ERMITE HERMITAGE",
     "createdAt": "2001",
     "liters": 0.75,
@@ -15,6 +16,7 @@
     "IMPORTER": "Vintner's Select",
     "RATING": "WA 98",
     "VARIETY COMPOSITION": ["Syrah"],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Богатый вкус с тонами темных ягод, черного перца, фиалки и дыма. Мощные, но шелковистые танины.",
     "legend": "L'Ermite — это вино с небольшого участка на вершине холма Эрмитаж, где, по легенде, жил отшельник.",
@@ -22,6 +24,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "CHÂTEAU MARGAUX",
     "createdAt": "2009",
     "liters": 0.75,
@@ -36,6 +39,8 @@
     "IMPORTER": "Bordeaux Direct",
     "RATING": "RP 100",
     "VARIETY COMPOSITION": ["Cabernet Sauvignon", "Merlot", "Petit Verdot"],
+    "specialOffer": false,
+
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Элегантный и сложный букет с нотами черной смородины, фиалки, кедра и табака. Безупречная структура и бесконечное послевкусие.",
     "legend": "Одно из величайших вин мира, история которого насчитывает несколько столетий. Эталон элегантности и утонченности.",
@@ -43,6 +48,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "SASSICAIA",
     "createdAt": "2016",
     "liters": 0.75,
@@ -57,6 +63,8 @@
     "IMPORTER": "Italian Finest",
     "RATING": "JS 100",
     "VARIETY COMPOSITION": ["Cabernet Sauvignon", "Cabernet Franc"],
+    "specialOffer": true,
+
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Ароматы черной смородины, вишни, розмарина и минералов. Вкус сбалансированный, с упругими танинами и долгим послевкусием.",
     "legend": "Первое «супертосканское» вино, которое произвело революцию в итальянском виноделии.",
@@ -64,6 +72,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "SCREAMING EAGLE",
     "createdAt": "2012",
     "liters": 0.75,
@@ -78,6 +87,8 @@
     "IMPORTER": "Exclusive Wines",
     "RATING": "WA 100",
     "VARIETY COMPOSITION": ["Cabernet Sauvignon"],
+    "specialOffer": true,
+
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Невероятно концентрированный вкус с нотами черники, крем-де-кассис, графита и весенних цветов.",
     "legend": "Одно из самых редких и дорогих вин в мире. Производится в очень ограниченных количествах.",
@@ -85,6 +96,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "PENFOLDS GRANGE",
     "createdAt": "2010",
     "liters": 0.75,
@@ -99,6 +111,7 @@
     "IMPORTER": "Global Vintners",
     "RATING": "WS 99",
     "VARIETY COMPOSITION": ["Shiraz", "Cabernet Sauvignon"],
+    "specialOffer": true,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Мощный, многослойный вкус с тонами ежевики, сливы, лакрицы, мокко и специй.",
     "legend": "Самое знаменитое вино Австралии, икона виноделия Нового Света.",
@@ -106,6 +119,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "VEGA SICILIA UNICO",
     "createdAt": "2006",
     "liters": 0.75,
@@ -120,6 +134,7 @@
     "IMPORTER": "Iberian Wines",
     "RATING": "RP 98",
     "VARIETY COMPOSITION": ["Tinto Fino", "Cabernet Sauvignon"],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Сложный букет с ароматами черных фруктов, бальзамическими нотами, кожей и специями.",
     "legend": "Легендарное вино Испании, известное своим невероятным потенциалом к выдержке.",
@@ -127,6 +142,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "CHÂTEAU HAUT-BRION",
     "createdAt": "2005",
     "liters": 0.75,
@@ -141,6 +157,7 @@
     "IMPORTER": "SIMPLE WINE",
     "RATING": "RP 100",
     "VARIETY COMPOSITION": ["Merlot", "Cabernet Sauvignon", "Cabernet Franc"],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Chateau Haut-Brion – относится к великим винам современности. Букет сдержанный, раскрывается неспешно и изящно тонами ягод – ежевики, слив, шелковицы и смородины, сменяясь минеральными, древесными, пряными и копчеными нотками.",
     "legend": "Виноградник Шато находится в коммуне Пессак-Леоньян. Это самое старое Гран Крю Бордо, создатель нового стиля вин в 17 веке. В 1855 году о-брион было возведено в ранг Премьер Крю Классе.",
@@ -148,6 +165,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "EGON MÜLLER SCHARZHOFBERGER RIESLING TBA",
     "createdAt": "2017",
     "liters": 0.375,
@@ -162,6 +180,7 @@
     "IMPORTER": "German Wine Elite",
     "RATING": "WA 100",
     "VARIETY COMPOSITION": ["Riesling"],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Невероятная концентрация ароматов меда, абрикоса, манго, маракуйи и сланцевой минеральности.",
     "legend": "Одно из величайших сладких вин мира, производимое из винограда, пораженного благородной плесенью.",
@@ -169,6 +188,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "DOMAINE DE LA ROMANÉE-CONTI, ROMANÉE-CONTI",
     "createdAt": "2015",
     "liters": 0.75,
@@ -183,6 +203,7 @@
     "IMPORTER": "DRC Imports",
     "RATING": "BH 99",
     "VARIETY COMPOSITION": ["Pinot Noir"],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "legend": "Самое престижное и востребованное вино Бургундии с крошечного виноградника-монополии площадью 1.8 гектара.",
@@ -190,6 +211,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "CHÂTEAU LAFITE ROTHSCHILD",
     "createdAt": "2000",
     "liters": 0.75,
@@ -204,6 +226,7 @@
     "IMPORTER": "Rothschild Collection",
     "RATING": "RP 100",
     "VARIETY COMPOSITION": ["Cabernet Sauvignon", "Merlot"],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Аромат кедра, графита, черной смородины. Вкус мощный, но элегантный, с прекрасной структурой и долгим послевкусием.",
     "legend": "Символ престижа и долголетия, Lafite известен своей утонченностью и способностью красиво стареть десятилетиями.",
@@ -211,6 +234,7 @@
   },
   {
     "image": "https://i.postimg.cc/KYP7D5qH/image.png",
+    "sliderImage": "/pauillacWine.jpg",
     "name": "OPUS ONE",
     "createdAt": "2014",
     "liters": 0.75,
@@ -231,6 +255,7 @@
       "Petit Verdot",
       "Malbec"
     ],
+    "specialOffer": false,
     "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
     "taste": "Богатые ароматы черных фруктов, эспрессо и специй. Вкус полнотелый, с бархатистыми танинами и долгим финалом.",
     "legend": "Совместный проект барона Филиппа де Ротшильда и Роберта Мондави, созданный для производства одного великого вина в стиле Бордо.",

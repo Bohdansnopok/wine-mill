@@ -6,6 +6,7 @@ import logo from "../../../public/logo.svg";
 import { usePlacingVisibilityStore } from "@/store/PlacingVisibilityStore";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function PlacingModal() {
   const {
@@ -49,40 +50,78 @@ export default function PlacingModal() {
 
         <Image src={logo} alt="" />
         <p>ВОЙТИ В АККАУНТ</p>
-        <form className="loginModal__content__form" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="loginModal__content__form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(onSubmit);
+            toast.success("Вы успешно сделали заказ!");
+            reset();
+            hide();
+          }}
+        >
           <label htmlFor="">
             Ваше Имя
-            <input type="name" 
-            {...register("name", {required: "веддите свое имя для подтверждения"})}/>
+            <input
+              type="name"
+              {...register("name", {
+                required: "веддите свое имя для подтверждения",
+              })}
+            />
             {errors.name && <p className="modalError">{errors.name.message}</p>}
           </label>
 
           <label htmlFor="">
             Ваша Фамилия
-            <input type="name" 
-            {...register("lastname", {required: "веддите свою фамилию для подтверждения"})}/>
-            {errors.lastname && <p className="modalError">{errors.lastname.message}</p>}
+            <input
+              type="name"
+              {...register("lastname", {
+                required: "веддите свою фамилию для подтверждения",
+              })}
+            />
+            {errors.lastname && (
+              <p className="modalError">{errors.lastname.message}</p>
+            )}
           </label>
 
           <label htmlFor="">
             Ваш номер
-            <input type="number" 
-            {...register("number", {required: "веддите свой номер для подтверждения"})}/>
-            {errors.number && <p className="modalError">{errors.number.message}</p>}
+            <input
+              type="number"
+              {...register("number", {
+                required: "веддите свой номер для подтверждения",
+              })}
+            />
+            {errors.number && (
+              <p className="modalError">{errors.number.message}</p>
+            )}
           </label>
 
           <label htmlFor="">
             Ваша почта
-            <input type="email" 
-            {...register("email", {required: "веддите свою почту для подтверждения"})}/>
-            {errors.email && <p className="modalError">{errors.email.message}</p>}
+            <input
+              type="email"
+              {...register("email", {
+                required: "веддите свою почту для подтверждения",
+              })}
+            />
+            {errors.email && (
+              <p className="modalError">{errors.email.message}</p>
+            )}
           </label>
 
           <label htmlFor="">
             Адреса відділення
-            <input type="text" autoComplete="street-address" 
-            {...register("streetAddress", {required: "веддите свой адрес для подтверждения"})}/>
-            {errors.streetAddress && <p className="modalError">{errors.streetAddress.message}</p>}
+            <input
+              type="text"
+              autoComplete="street-address"
+              {...register("streetAddress", {
+                required: "веддите свой адрес для подтверждения",
+              })}
+            />
+            {errors.streetAddress && (
+              <p className="modalError">{errors.streetAddress.message}</p>
+            )}
           </label>
 
           <label className="paymemtMethod__label">

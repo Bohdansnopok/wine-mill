@@ -6,6 +6,9 @@ import Footer from "@/components/Footer/Footer";
 import { RegisterModal } from "@/components/RegisterModal/RegisterModal";
 import { LoginModal } from "@/components/LoginModal/LoginModal";
 import ConsultationModal from "@/components/СonsultationModal/СonsultationModal";
+import PlacingModal from "@/components/PlacingModal/PlacingModal";
+import { ToastContainer } from "react-toastify";
+import { QueryProvider } from "../providers/QueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +33,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <QueryProvider>
         <Header />
         <RegisterModal />
         <LoginModal />
+        <PlacingModal />
         <ConsultationModal />
         {children}
         <Footer />
+        <ToastContainer position="top-right" autoClose={3000} />
+        </QueryProvider>
       </body>
     </html>
   );

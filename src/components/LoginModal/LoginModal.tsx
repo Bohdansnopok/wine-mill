@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import Image from "next/image";
 import "./LoginModal.scss";
 import logo from "../../../public/logo.svg";
 import { useLogInVisibilityStore } from "@/store/logInVisibilityStore";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export function LoginModal() {
   const {
@@ -35,19 +36,37 @@ export function LoginModal() {
 
         <Image src={logo} alt="" />
         <p>ВОЙТИ В АККАУНТ</p>
-        <form action="" className="loginModal__content__form" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          action=""
+          className="loginModal__content__form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(onSubmit);
+            toast.success("Вы успешно вошли в аккаунт!"); 
+            reset();
+            hide();
+          }}
+        >
           <label htmlFor="">
             електронная почта
-            <input type="email" 
-            {...register("email", { required: "веддите свою почту" })} />
-            {errors.email && <p className="modalError">{errors.email.message}</p>}
+            <input
+              type="email"
+              {...register("email", { required: "веддите свою почту" })}
+            />
+            {errors.email && (
+              <p className="modalError">{errors.email.message}</p>
+            )}
           </label>
 
           <label htmlFor="">
             пароль
-            <input type="password" 
-            {...register("password", {required: "веддите свой пароль"})}/>
-            {errors.password && <p className="modalError">{errors.password.message}</p>}
+            <input
+              type="password"
+              {...register("password", { required: "веддите свой пароль" })}
+            />
+            {errors.password && (
+              <p className="modalError">{errors.password.message}</p>
+            )}
           </label>
 
           <button type="submit" className="redBtn">

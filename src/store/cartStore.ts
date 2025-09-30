@@ -27,7 +27,6 @@ const loadCart = (): Product[] => {
   return [];
 };
 
-// функция для сохранения корзины
 const saveCart = (cart: Product[]) => {
   if (typeof window !== "undefined") {
     localStorage.setItem("cart", JSON.stringify(cart));
