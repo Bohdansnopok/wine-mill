@@ -12,7 +12,7 @@ export default function PlacingModal() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<FormData>({
     mode: "onBlur",
@@ -25,18 +25,11 @@ export default function PlacingModal() {
 
   const isVisible = usePlacingVisibilityStore((state) => state.isVisible);
   const hide = usePlacingVisibilityStore((state) => state.hide);
-  const [paymentMethod, setPaymentMethod] = useState<string>("card"); // значение по умолчанию
+  const [paymentMethod, setPaymentMethod] = useState<string>("card"); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPaymentMethod(e.target.value);
   };
-
-  // const handleSubmit = () => {
-  //   console.log("Выбран способ оплаты:", paymentMethod);
-  //   if (paymentMethod === "card") {
-  //   } else {
-  //   }
-  // };
 
   if (!isVisible) return null;
 
@@ -148,7 +141,7 @@ export default function PlacingModal() {
             При получении
           </label>
 
-          <button type="submit" className="redBtn" onClick={handleSubmit}>
+          <button type="submit" className="redBtn" onClick={handleSubmit} disabled={!isValid}>
             ОТПРАВИТЬ
           </button>
         </form>

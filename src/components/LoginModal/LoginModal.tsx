@@ -11,7 +11,7 @@ export function LoginModal() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<FormData>({
     mode: "onBlur",
@@ -69,7 +69,7 @@ export function LoginModal() {
             )}
           </label>
 
-          <button type="submit" className="redBtn">
+          <button type="submit" className="redBtn" disabled={!isValid}>
             ОТПРАВИТЬ
           </button>
         </form>

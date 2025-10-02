@@ -11,7 +11,7 @@ export default function ConsultationModal() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<FormData>({
     mode: "onBlur",
@@ -90,7 +90,7 @@ export default function ConsultationModal() {
               <p className="modalError">{errors.email.message}</p>
             )}
           </label>
-          <button type="submit" className="redBtn" onClick={handleSubmit}>
+          <button type="submit" className="redBtn" onClick={handleSubmit} disabled={!isValid}>
             ОТПРАВИТЬ
           </button>
         </form>

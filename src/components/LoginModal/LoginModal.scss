@@ -107,3 +107,8 @@
   position: absolute;
   bottom: -20px;
 }
+
+.redBtn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
