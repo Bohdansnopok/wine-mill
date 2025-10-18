@@ -1,0 +1,23 @@
+.wineTasting {
+    .container {
+        padding: 45px;
+        color: white;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__content {
+        margin-bottom: 15px;
+    }
+
+    &__list {
+        margin-bottom: 15px;
+    }
+
+    &__subtitle {
+        text-decoration: underline;
+        color: orangered;
+    }
+}

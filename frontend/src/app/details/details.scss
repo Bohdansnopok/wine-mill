@@ -1,0 +1,53 @@
+.details {
+    .container {
+        padding: 50px 45px;
+        color: white;
+    }
+
+    ul {
+        list-style-position: inside;
+
+        li::marker {
+            font-size: 20px;
+        }
+    }
+
+    &__delivery,
+    &__conditions {
+        display: flex;
+        align-items: start;
+
+        &__info {
+            &__title {
+                font-size: 15px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &__conditions {
+        margin-top: 60px;
+
+        &__rightContent {
+            &__images {
+                display: flex;
+                align-items: center;
+            }
+
+            &__faq {
+                font-size: 13px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                &__title {
+                    font-size: 25px;
+                    font-weight: 600;
+                    margin: 15px 0;
+                }
+            }
+        }
+    }
+}
