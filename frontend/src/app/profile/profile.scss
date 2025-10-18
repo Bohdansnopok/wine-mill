@@ -1,0 +1,123 @@
+.profile {
+    color: white;
+
+    .container {
+        padding: 50px 44px;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &__avatar {
+            border-radius: 50%;
+            max-width: 70px;
+            max-height: 70px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__yourOrders {
+        h3 {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        &__cards {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 15px;
+        }
+
+        &__card {
+            width: 238px;
+            position: relative;
+
+            &__wine {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                z-index: 5;
+
+                &__blackDecor {
+                    background-color: #0a0a0a;
+                    position: absolute;
+                    top: 12%;
+                    z-index: 1px;
+                    height: 275px;
+                    width: 100%;
+                }
+            }
+
+            &__wineImage {
+                display: flex;
+                align-self: center;
+                margin: 0 auto;
+                z-index: 5;
+                transition: all 0.1s ease-in-out;
+            }
+
+            &__wineImage:hover {
+                width: 110px;
+            }
+
+            &__title {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                letter-spacing: 2.5px;
+            }
+
+            &__year {
+                font-size: 7px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                margin-bottom: 5px;
+            }
+
+            &__country {
+                font-size: 7px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                margin-bottom: 5px;
+            }
+
+            &__priceAndCart {
+                font-size: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            &__price {
+                font-weight: 700;
+                letter-spacing: 3px;
+
+                p {
+                    color: gray;
+                    margin-bottom: 2px;
+                }
+
+                div {
+                    font-size: 11px;
+                }
+            }
+
+            .redBtn {
+                padding: 8px 13px;
+            }
+        }
+
+        &__seeAll {
+            font-size: 20px;
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+    }
+}

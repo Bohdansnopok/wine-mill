@@ -1,0 +1,34 @@
+.offers {
+    padding-top: 5px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 11px;
+
+    &__offer {
+        width: 100%;
+        padding: 37px 0;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    .brandWine {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/brandWineBg.jpg") no-repeat;
+    }
+
+    .conversation {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/conversationBg.jpg") no-repeat;
+    }
+
+    .signatureCocktail {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("../../../public/signatureCocktailsBg.jpg") no-repeat;
+    }
+
+    p {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+}

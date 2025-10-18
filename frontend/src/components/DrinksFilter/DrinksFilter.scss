@@ -1,0 +1,110 @@
+.wiskeyCatalog__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 74px;
+    max-width: 230px;
+
+    .wiskeyCatalog__filter__checkout_top__minus {
+        background-color: #7a0000;
+        padding: 5px 10px;
+    }
+
+    &__price-filter {
+        background-color: #1a1a1a;
+        color: white;
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 0.5px solid #fff;
+        }
+
+        &__label {
+            font-size: 12px;
+        }
+
+        &__toggle {
+            background: none;
+            border: none;
+            color: #8b0000;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        &__inputs {
+            display: flex;
+
+            &__BorderWrapper {
+                border: 1px solid #fff;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &__input {
+            width: 100%;
+            background-color: #1a1a1a;
+            color: #999;
+            border: none;
+            padding: 8px;
+            outline: none;
+            height: 16px;
+            font-size: 9px;
+        }
+
+        &__input:first-child {
+            border-right: 1px solid #fff;
+            padding-right: 0;
+            padding-left: 8px;
+            margin-right: 10px;
+        }
+
+        &__input::placeholder {
+            font-size: 9px;
+            font-weight: bold;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Для Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        &__separator {
+            width: 1px;
+            background-color: #666;
+        }
+
+        &__ok-button {
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+
+    &__accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &_top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+        }
+    }
+}

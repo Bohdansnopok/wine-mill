@@ -1,0 +1,42 @@
+[
+  {
+    "id": "liquor-1",
+    "name": "liquor with chocolate",
+    "createdAt": "2001",
+    "liters": 0.75,
+    "country": "France",
+    "city": "Rhône",
+    "price": 4999,
+    "quantity": 1,
+    "classification": "AOC Hermitage",
+    "FORTRESS": 14.0,
+    "SUGAR": "Dry",
+    "IMPORTER": "Vintner's Select",
+    "RATING": "WA 98",
+    "VARIETY COMPOSITION": ["Syrah"],
+    "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
+    "taste": "Богатый вкус с тонами темных ягод, черного перца, фиалки и дыма. Мощные, но шелковистые танины.",
+    "legend": "L'Ermite — это вино с небольшого участка на вершине холма Эрмитаж, где, по легенде, жил отшельник.",
+    "image": "/liquor1.jpeg"
+  },
+  {
+    "id": "liquor-2",
+    "name": "liquor strong",
+    "createdAt": "2001",
+    "liters": 0.75,
+    "country": "France",
+    "city": "Rhône",
+    "price": 3000,
+    "quantity": 1,
+    "classification": "AOC Hermitage",
+    "FORTRESS": 14.0,
+    "SUGAR": "Dry",
+    "IMPORTER": "Vintner's Select",
+    "RATING": "WA 98",
+    "VARIETY COMPOSITION": ["Syrah"],
+    "description": "Неземной букет с ароматами красных ягод, лепестков роз, экзотических специй и влажной земли.",
+    "taste": "Богатый вкус с тонами темных ягод, черного перца, фиалки и дыма. Мощные, но шелковистые танины.",
+    "legend": "L'Ermite — это вино с небольшого участка на вершине холма Эрмитаж, где, по легенде, жил отшельник.",
+    "image": "/liquor2.jpeg"
+  }
+]
