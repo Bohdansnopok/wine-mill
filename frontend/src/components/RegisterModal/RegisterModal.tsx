@@ -30,28 +30,28 @@ export function RegisterModal() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:4000/register', {
-method: 'POST',
-headers: {
-  'Content-Type': 'application/json',
-},
-body: JSON.stringify({ name, email, password }),
-    })
+    const response = await fetch("http://localhost:4000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
 
     const data = await response.json();
 
     if (response.ok) {
-      console.log('Registration successful:', data);
+      console.log("Registration successful:", data);
       setMessage(data.message);
-      setName('');
-      setEmail('');
-      setPassword('');
+      setName("");
+      setEmail("");
+      setPassword("");
       reset();
       hide();
     } else {
       setMessage(data.error);
     }
-  }
+  };
 
   if (!isVisible) return null;
 
@@ -65,10 +65,7 @@ body: JSON.stringify({ name, email, password }),
         <Image src={logo} alt="Logo" />
         <p>ЗАРЕГИСТРИРОВАТСЯ</p>
 
-        <form
-          className="loginModal__content__form"
-          onSubmit={handleSubmit}
-        >
+        <form className="loginModal__content__form" onSubmit={handleSubmit}>
           <label>
             имя
             <input

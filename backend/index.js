@@ -23,6 +23,21 @@ app.post('/register', async (req, res) => {
   res.json({ message: 'User registered successfully', user });
 });
 
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await prisma.user.findUnique({ where: { email } });
+  if (!user) {
+    return res.status(400).json({ error: 'Invalid email or password' });
+  }
+
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+  if (!isPasswordValid) {
+    return res.status(400).json({ error: 'Invalid email or password' });
+  }
+
+  res.json({ message: 'Login successful', user });
+})
+
 app.listen(4000, () => {
     console.log('Server is running on http://localhost:4000');
 })
