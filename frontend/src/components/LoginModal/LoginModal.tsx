@@ -8,6 +8,8 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useLoginStore } from "@/store/loginStore";
+import { use, useState } from "react";
+import { useIsLoggedStore } from "@/store/isLoggedStore";
 
 interface LoginForm {
   email: string;
@@ -17,7 +19,6 @@ interface LoginForm {
 export function LoginModal() {
   const {
     register,
-    handleSubmit,
     formState: { errors, isValid },
     reset,
   } = useForm<LoginForm>({ mode: "onBlur" });
@@ -25,30 +26,36 @@ export function LoginModal() {
   // const { login, isLoggedIn } = useLoginStore();
   const isVisible = useLogInVisibilityStore((state) => state.isVisible);
   const hide = useLogInVisibilityStore((state) => state.hide);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const isLoggedIn = useIsLoggedStore((state) => state.isLoggedIn);
+  const setIsLoggedIn = useIsLoggedStore((state) => state.setIsLoggedIn);
 
-  if (!isVisible || isLoggedIn) return null;
+  if (!isVisible) return null;
 
-  const onSubmit = (data: LoginForm) => {
-    // const savedUser = localStorage.getItem("user");
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-    // if (!savedUser) {
-    //   toast.error("Пользователь не найден. Зарегистрируйтесь.");
-    //   return;
-    // }
+    const response = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
 
-    // const parsed = JSON.parse(savedUser);
+    const data = await response.json();
 
-    // if (
-      // parsed.user.email === data.email &&
-      // parsed.user.password === data.password
-    // ) {
-      // login(parsed.user); 
-      // toast.success("Вы успешно вошли в аккаунт!");
+    if (response.ok) {
+      console.log("Login successful:", data);
+      setMessage(data.message);
+      setEmail("");
+      setPassword("");
       reset();
       hide();
-    // } else {
-      // toast.error("Неверный email или пароль");
-    // }
+      setIsLoggedIn(true);
+    }
   };
 
   return (
@@ -62,15 +69,13 @@ export function LoginModal() {
         <Image src={logo} alt="" />
         <p>ВОЙТИ В АККАУНТ</p>
 
-        <form
-          className="loginModal__content__form"
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <form className="loginModal__content__form" onSubmit={handleSubmit}>
           <label>
             Электронная почта
             <input
               type="email"
               {...register("email", { required: "Введите свою почту" })}
+              onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && (
               <p className="modalError">{errors.email.message}</p>
@@ -82,6 +87,7 @@ export function LoginModal() {
             <input
               type="password"
               {...register("password", { required: "Введите свой пароль" })}
+              onChange={(e) => setPassword(e.target.value)}
             />
             {errors.password && (
               <p className="modalError">{errors.password.message}</p>
