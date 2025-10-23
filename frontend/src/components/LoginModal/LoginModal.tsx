@@ -8,7 +8,8 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useLoginStore } from "@/store/loginStore";
-import { useState } from "react";
+import { use, useState } from "react";
+import { useIsLoggedStore } from "@/store/isLoggedStore";
 
 interface LoginForm {
   email: string;
@@ -28,6 +29,8 @@ export function LoginModal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const isLoggedIn = useIsLoggedStore((state) => state.isLoggedIn);
+  const setIsLoggedIn = useIsLoggedStore((state) => state.setIsLoggedIn);
 
   if (!isVisible) return null;
 
@@ -51,6 +54,7 @@ export function LoginModal() {
       setPassword("");
       reset();
       hide();
+      setIsLoggedIn(true);
     }
   };
 
@@ -65,10 +69,7 @@ export function LoginModal() {
         <Image src={logo} alt="" />
         <p>ВОЙТИ В АККАУНТ</p>
 
-        <form
-          className="loginModal__content__form"
-          onSubmit={handleSubmit}
-        >
+        <form className="loginModal__content__form" onSubmit={handleSubmit}>
           <label>
             Электронная почта
             <input

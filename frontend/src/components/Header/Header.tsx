@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useVisibilityStore } from "@/store/registerVisibilityStore";
 import { useLogInVisibilityStore } from "@/store/logInVisibilityStore";
 import { useForm } from "react-hook-form";
+import { useIsLoggedStore } from "@/store/isLoggedStore";
 
 export default function Header() {
   const {
@@ -24,9 +25,10 @@ export default function Header() {
     console.log(data);
     reset();
   };
-  
+
   const show = useVisibilityStore((state) => state.show);
   const showLogIn = useLogInVisibilityStore((state) => state.show);
+  const isLoggedIn = useIsLoggedStore((state) => state.isLoggedIn);
 
   return (
     <header className="header">
@@ -49,7 +51,9 @@ export default function Header() {
               })}
               className="headerInput"
             />
-            {errors.name && <p className="headerInput__errorMessage">{errors.name.message}</p>}
+            {errors.name && (
+              <p className="headerInput__errorMessage">{errors.name.message}</p>
+            )}
             <button type="submit" className="headerInput__submit">
               <Image src={search} alt="search icon" />
             </button>
@@ -58,10 +62,11 @@ export default function Header() {
           <div className="headerContent__items">
             <div className="headerContent__items__item">
               <div className="headerContent__items__item__links">
-                <button onClick={show}>Регистрация</button>
-                <button onClick={showLogIn}>Вход</button>
+                {isLoggedIn ? <button onClick={show}>Регистрация</button> : <button >Выход</button>}
+
+                {isLoggedIn ? <button onClick={showLogIn}>Вход</button> : null}
               </div>
-              <Link href="/profile">Личный кабинет</Link>
+              {isLoggedIn ? null : <Link href="/profile">Личный кабинет</Link>}
             </div>
           </div>
 

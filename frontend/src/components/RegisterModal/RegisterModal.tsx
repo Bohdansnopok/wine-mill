@@ -10,6 +10,7 @@ import { useAuthStore } from "@/store/authStore";
 import { registerUser, RegisterPayload } from "../../app/api/authApi";
 import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { useIsLoggedStore } from "@/store/isLoggedStore";
 
 export function RegisterModal() {
   const isVisible = useVisibilityStore((state) => state.isVisible);
@@ -18,6 +19,8 @@ export function RegisterModal() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const isLoggedIn = useIsLoggedStore((state) => state.isLoggedIn);
+  const setIsLoggedIn = useIsLoggedStore((state) => state.setIsLoggedIn);
 
   const {
     register,
@@ -48,6 +51,7 @@ export function RegisterModal() {
       setPassword("");
       reset();
       hide();
+      setIsLoggedIn(true);
     } else {
       setMessage(data.error);
     }
