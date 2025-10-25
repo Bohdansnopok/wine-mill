@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import "./WineList.scss";
-import wine from "../../../public/Wine.png";
+import wineImage from "../../../public/Wine.png";
 import { useWines, Wine } from "@/hooks/useWines";
 import { useCartStore } from "@/store/cartStore";
 import Link from "next/link";
@@ -15,12 +14,19 @@ type WineListProps = {
 };
 
 export default function WineList({ limit }: WineListProps) {
-  const { wines, isLoading, error } = useWines();
   const addToCart = useCartStore((state) => state.addToCart);
+  const [products, setProducts] = useState<any[]>([]);
 
-  if (isLoading) return <p>Завантаження...</p>;
+  const fetchProducts = async () => {
+    const res = await fetch("http://localhost:4000/products");
+    const data = await res.json();
+    console.log(data);
+    setProducts(data);
+  };
 
-  const displayedWines = limit ? wines.slice(0, limit) : wines;
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <aside className="wineCatalog">
@@ -57,7 +63,7 @@ export default function WineList({ limit }: WineListProps) {
         </div>
 
         <div className="wineCatalog__list__cards">
-          {displayedWines.map((wine: Wine) => (
+          {products.map((wine: Wine) => (
             <Link
               href={`/wine/${wine.id}`}
               key={wine.id}
@@ -66,7 +72,7 @@ export default function WineList({ limit }: WineListProps) {
               <div className="wineCatalog__list__card__wine__blackDecor"></div>
               <div className="wineCatalog__list__card__wine">
                 <Image
-                  src={wine.image}
+                  src={wineImage}
                   alt={wine.name}
                   height={349}
                   width={99}

@@ -14,6 +14,7 @@ import { Drink } from "../../../types/Drinks.js";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
 import Subscribe from "@/components/Subscribe/Subscribe";
+import wine from "../../../../public/Wine.png";
 
 interface ProductPageProps {
   params: { id: string };

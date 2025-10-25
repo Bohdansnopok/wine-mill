@@ -1,46 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import "./SpecialOfferSlider.scss";
 import { usePlacingVisibilityStore } from "../../store/PlacingVisibilityStore";
-import winesData from "../../../public/mock/wines.json";
 import { useCartStore } from "@/store/cartStore";
 import Image from "next/image";
 import { toast } from "react-toastify";
 
 export default function BannerSlider() {
-  const specialOffers = winesData.filter((wine) => wine.specialOffer === true);
   const [current, setCurrent] = useState(0);
   const show = usePlacingVisibilityStore((state) => state.show);
   const addToCart = useCartStore(
     (state) => state.addToCart,
   );
 
+  const [products, setProducts] = useState<any[]>([]);
+  
+    const fetchProducts = async () => {
+      const res = await fetch("http://localhost:4000/products");
+      const data = await res.json();
+      console.log(data);
+      setProducts(data);
+    };
+  
+    useEffect(() => {
+      fetchProducts();
+    }, []);
+
   const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % specialOffers.length);
+    setCurrent((prev) => (prev + 1) % products.length);
   };
 
   const prevSlide = () => {
     setCurrent(
-      (prev) => (prev - 1 + specialOffers.length) % specialOffers.length,
+      (prev) => (prev - 1 + products.length) % products.length,
     );
   };
 
   return (
     <section className="slider container">
-      {specialOffers.map((slide, index) => (
+      {products.map((slide, index) => (
         <div
           key={slide.id}
           className={`slide ${index === current ? "active" : ""}`}
         >
-          <Image
+          {/* <Image
             src={slide.sliderImage}
             alt={slide.name}
             className="slide-image"
             width={600}
             height={400}
-          />
+          /> */}
           <div className="leftBlock">
             <h1>Special offer</h1>
             <div className="slide-title">{slide.name}</div>
