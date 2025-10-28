@@ -1,11 +1,19 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-type isLoggedVisibilityState = {
+interface IsLoggedVisibilityState {
   isLoggedIn: boolean;
   setIsLoggedIn: (value: boolean) => void;
-};
+}
 
-export const useIsLoggedStore = create<isLoggedVisibilityState>((set) => ({
-  isLoggedIn: false,
-  setIsLoggedIn: (value) => set({ isLoggedIn: value }),
-}));
+export const useIsLoggedStore = create<IsLoggedVisibilityState>()(
+  persist(
+    (set) => ({
+      isLoggedIn: false,
+      setIsLoggedIn: (value) => set({ isLoggedIn: value }),
+    }),
+    {
+      name: "isLogged-storage", 
+    }
+  )
+);

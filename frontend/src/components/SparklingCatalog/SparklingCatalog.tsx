@@ -5,7 +5,7 @@ import Wiskey from "../../../public/wiskey.png";
 import "../DrinksFilter/DrinksFilter.scss";
 import "../../app/Catalogs.scss";
 import { CatalogDropdown } from "../CatalogDropdown/CatalogDropdown";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSparkling } from "../../hooks/useSparkling";
 import { Drink } from "@/types/Drinks.js";
 import { useCartStore } from "@/store/cartStore";
@@ -13,8 +13,18 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 
 const SparklingCatalog: React.FC = () => {
-  const { sparklingDrinks, isLoading, error } = useSparkling();
   const addToCart = useCartStore((state) => state.addToCart);
+  const [sparklings, setSparklings] = React.useState<Drink[]>([]);
+
+  const fetchSparklings = async () => {
+    const res = await fetch("http://localhost:4000/sparklings")
+    const data = await res.json()
+    setSparklings(data)
+  }
+
+  useEffect(()=> {
+    fetchSparklings()
+  }, [])
 
   return (
     <aside className="catalog">
@@ -22,11 +32,9 @@ const SparklingCatalog: React.FC = () => {
         <CatalogDropdown />
 
         <div className="catalog__list__cards">
-          {isLoading && <p className="isLoading">Завантаження...</p>}
-          {error && <p className="isLoading">Ой... Виникла помилка..</p>}
 
-          {!isLoading && !error && sparklingDrinks.length > 0
-            ? sparklingDrinks.map((drink: Drink) => (
+          {sparklings.length > 0
+            ? sparklings.map((drink: Drink) => (
                 <Link
                   href={`/product/${drink.id}`}
                   key={drink.id}
@@ -74,7 +82,7 @@ const SparklingCatalog: React.FC = () => {
                   </div>
                 </Link>
               ))
-            : !isLoading && !error && <p className="isLoading">Немає даних.</p>}
+            : <p className="isLoading">Немає даних.</p>}
         </div>
       </div>
     </aside>

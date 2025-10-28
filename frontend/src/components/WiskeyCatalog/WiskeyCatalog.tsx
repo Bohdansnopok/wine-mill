@@ -4,16 +4,25 @@ import Image from "next/image";
 import "../DrinksFilter/DrinksFilter.scss";
 import "../../app/Catalogs.scss";
 import { CatalogDropdown } from "../CatalogDropdown/CatalogDropdown";
-import React, { useState } from "react";
-import { useWhiskey } from "../../hooks/useWiskey";
+import React, { useEffect, useState } from "react";
 import { Drink } from "@/types/Drinks";
 import { useCartStore } from "@/store/cartStore";
 import Link from "next/link";
 import { toast } from "react-toastify";
 
 const WiskeyCatalog: React.FC = () => {
-  const { whiskeyDrinks, isLoading, error } = useWhiskey();
   const addToCart = useCartStore((state) => state.addToCart);
+  const [whiskey, setWhiskey] = useState<Drink[]>([]);
+  const fetchWhiskey = async () => {
+    const res = await fetch("http://localhost:4000/whiskeys");
+    const data = await res.json();
+    console.log(data);
+    setWhiskey(data);
+  }
+
+  useEffect(() => {
+    fetchWhiskey();
+  }, [])
 
   return (
     <aside className="catalog">
@@ -21,24 +30,22 @@ const WiskeyCatalog: React.FC = () => {
         <CatalogDropdown />
 
         <div className="catalog__list__cards">
-          {isLoading && <p className="isLoading">Завантаження...</p>}
-          {error && <p className="isLoading">Ой... Виникла помилка..</p>}
 
-          {!isLoading && !error && whiskeyDrinks.length > 0
-            ? whiskeyDrinks.map((drink: Drink) => (
+          {whiskey.length > 0
+            ? whiskey.map((drink: Drink) => (
                 <Link
                   href={`/product/${drink.id}`}
                   key={drink.id}
                   className="catalog__list__card"
                 >
                   <div className="catalog__list__card__product">
-                    <Image
+                    {/* <Image
                       src={drink.image}
                       alt=""
                       width={233}
                       height={320}
                       className="catalog__list__card__image"
-                    />
+                    /> */}
                   </div>
                   <p className="catalog__list__card__title">{drink.name}</p>
                   <div className="catalog__list__card__year">
@@ -73,7 +80,7 @@ const WiskeyCatalog: React.FC = () => {
                   </div>
                 </Link>
               ))
-            : !isLoading && !error && <p className="isLoading">Немає даних.</p>}
+            : <p className="isLoading">Немає даних.</p>}
         </div>
       </div>
     </aside>

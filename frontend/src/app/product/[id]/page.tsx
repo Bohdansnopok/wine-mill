@@ -1,15 +1,7 @@
 import Image from "next/image";
 import "./ItemDetails.scss";
 import "../../../components/WineList/WineList.scss";
-import whiskey from "../../../../public/mock/wiskey.json";
-import sparkling from "../../../../public/mock/sparkling.json";
-import cognac from "../../../../public/mock/сognac.json";
-import armagnac from "../../../../public/mock/armagnac.json";
-import coctails from "../../../../public/mock/cocktails.json";
-import delicacies from "../../../../public/mock/delicacies.json";
-import liquor from "../../../../public/mock/liquor.json";
-import rum from "../../../../public/mock/rum.json";
-import vodka from "../../../../public/mock/vodka.json";
+
 import { Drink } from "../../../types/Drinks.js";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
@@ -20,8 +12,6 @@ interface ProductPageProps {
 }
 
 export default function ItemDetails({ params }: ProductPageProps) {
-  const allDrinks: Drink[] = [...whiskey, ...sparkling, ...cognac, ...armagnac, ...coctails, ...delicacies, ...liquor, ...rum, ...vodka];
-  const product = allDrinks.find((p) => p.id === params.id);
 
   return (
     <section className="itemDetails">

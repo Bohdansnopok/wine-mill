@@ -5,16 +5,25 @@ import Wiskey from "../../../public/wiskey.png";
 import "../DrinksFilter/DrinksFilter.scss";
 import "../../app/Catalogs.scss";
 import { CatalogDropdown } from "../CatalogDropdown/CatalogDropdown";
-import React from "react";
+import React, { useEffect } from "react";
 import { Drink } from "@/types/Drinks";
-import { useCognac } from "@/hooks/useCognac";
 import { useCartStore } from "@/store/cartStore";
 import Link from "next/link";
 import { toast } from "react-toastify";
 
 const CognacCatalog: React.FC = () => {
-  const { cognacDrinks, isLoading, error } = useCognac();
   const addToCart = useCartStore((state) => state.addToCart);
+  const [cognac, setCognac] = React.useState<Drink[]>([]);
+
+  const fetchCognac = async () => {
+    const res = await fetch("http://localhost:4000/cognacs")
+    const data = await res.json();
+    setCognac(data);
+  }
+
+  useEffect(() => {
+    fetchCognac();
+  }, [])
 
   return (
     <aside className="catalog">
@@ -22,11 +31,9 @@ const CognacCatalog: React.FC = () => {
         <CatalogDropdown />
 
         <div className="catalog__list__cards">
-          {isLoading && <p className="isLoading">Завантаження...</p>}
-          {error && <p className="isLoading">Ой... Виникла помилка..</p>}
 
-          {!isLoading && !error && cognacDrinks.length > 0
-            ? cognacDrinks.map((drink: Drink) => (
+          {cognac.length > 0
+            ? cognac.map((drink: Drink) => (
                 <Link
                   href={`/product/${drink.id}`}
                   key={drink.id}
@@ -74,7 +81,7 @@ const CognacCatalog: React.FC = () => {
                   </div>
                 </Link>
               ))
-            : !isLoading && !error && <p className="isLoading">Немає даних.</p>}
+            : <p className="isLoading">Немає даних.</p>}
         </div>
       </div>
     </aside>
