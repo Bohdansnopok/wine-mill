@@ -30,6 +30,11 @@ export default function Header() {
   const showLogIn = useLogInVisibilityStore((state) => state.show);
   const isLoggedIn = useIsLoggedStore((state) => state.isLoggedIn);
 
+  const handleUserDelete = () => {
+    const userId = data.user.id
+    console.log(userId);
+  }
+
   return (
     <header className="header">
       <div className="topTextLine">
@@ -62,9 +67,9 @@ export default function Header() {
           <div className="headerContent__items">
             <div className="headerContent__items__item">
               <div className="headerContent__items__item__links">
-                {isLoggedIn ? <button onClick={show}>Регистрация</button> : <button >Выход</button>}
+                {isLoggedIn ? <button onClick={handleUserDelete}>Выход</button> : <button onClick={show}>Регистрация</button>}
 
-                {isLoggedIn ? <button onClick={showLogIn}>Вход</button> : null}
+                {isLoggedIn ? null : <button onClick={showLogIn}>Вход</button>}
               </div>
               {isLoggedIn ? null : <Link href="/profile">Личный кабинет</Link>}
             </div>

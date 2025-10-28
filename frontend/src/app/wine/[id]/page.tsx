@@ -1,7 +1,6 @@
 import Image from "next/image";
 import "../../product/[id]/ItemDetails.scss";
 import "../../../components/WineList/WineList.scss";
-import wines from "../../../../public/mock/wines.json";
 import { Drink } from "../../../types/Drinks.js";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import SommelierChoise from "@/components/SommelierChoise/SommelierChoise";
@@ -12,7 +11,6 @@ interface ProductPageProps {
 }
 
 export default function ItemDetails({ params }: ProductPageProps) {
-  const product = wines.find((p) => p.id === params.id);
 
   return (
     <section className="itemDetails">
