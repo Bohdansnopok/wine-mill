@@ -4,12 +4,12 @@ import { ArrowRight } from "lucide-react";
 import "./cart.scss";
 import Image from "next/image";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
-import Subscribe from "../../components/Subscribe/Subscribe";
-import { useCartStore } from "../../store/cartStore";
+import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
+import Subscribe from "@/components/Subscribe/Subscribe";
+import { useCartStore } from "@/store/cartStore";
 import { useEffect, useState } from "react";
-import { usePlacingVisibilityStore } from "../../store/PlacingVisibilityStore";
-import PlacingModal from "../../components/PlacingModal/PlacingModal";
+import { usePlacingVisibilityStore } from "@/store/PlacingVisibilityStore";
+import PlacingModal from "@/components/PlacingModal/PlacingModal";
 import { toast } from "react-toastify";
 
 export default function Cart() {
@@ -89,7 +89,7 @@ export default function Cart() {
                       <IoMdCloseCircleOutline />
                     </div>
                     <Image
-                      src={product.image}
+                      src={product.image!}
                       alt="wine"
                       width={50}
                       height={150}

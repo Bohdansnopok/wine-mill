@@ -11,17 +11,21 @@ import { useLogInVisibilityStore } from "@/store/logInVisibilityStore";
 import { useForm } from "react-hook-form";
 import { useIsLoggedStore } from "@/store/isLoggedStore";
 
+type FormValues = {
+  name: string;
+};
+
 export default function Header() {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormData>({
+  } = useForm<FormValues>({
     mode: "onBlur",
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: FormValues) => {
     console.log(data);
     reset();
   };
@@ -30,10 +34,10 @@ export default function Header() {
   const showLogIn = useLogInVisibilityStore((state) => state.show);
   const isLoggedIn = useIsLoggedStore((state) => state.isLoggedIn);
 
-  const handleUserDelete = () => {
-    const userId = data.user.id
-    console.log(userId);
-  }
+  // const handleUserDelete = () => {
+  //   const userId = data.user.id
+  //   console.log(userId);
+  // }
 
   return (
     <header className="header">
@@ -67,7 +71,7 @@ export default function Header() {
           <div className="headerContent__items">
             <div className="headerContent__items__item">
               <div className="headerContent__items__item__links">
-                {isLoggedIn ? <button onClick={handleUserDelete}>Выход</button> : <button onClick={show}>Регистрация</button>}
+                {isLoggedIn ? <button>Выход</button> : <button onClick={show}>Регистрация</button>}
 
                 {isLoggedIn ? null : <button onClick={showLogIn}>Вход</button>}
               </div>

@@ -5,8 +5,9 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import "./SpecialOfferSlider.scss";
 import { usePlacingVisibilityStore } from "../../store/PlacingVisibilityStore";
 import { useCartStore } from "@/store/cartStore";
-import Image from "next/image";
+// import Image from "next/image";
 import { toast } from "react-toastify";
+import { Drink } from '../../types/Drinks';
 
 export default function BannerSlider() {
   const [current, setCurrent] = useState(0);
@@ -15,7 +16,7 @@ export default function BannerSlider() {
     (state) => state.addToCart,
   );
 
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<Drink[]>([]);
   
     const fetchProducts = async () => {
       const res = await fetch("http://localhost:4000/products");
