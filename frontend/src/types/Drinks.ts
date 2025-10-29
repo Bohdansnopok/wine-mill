@@ -1,6 +1,6 @@
 
 export interface Drink {
-  id: string;
+  id: number;
   name: string;
   createdAt: string;
   liters: number;
